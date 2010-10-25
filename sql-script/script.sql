@@ -2,7 +2,7 @@
 -- 20101025
 -- Pontus
 CREATE TABLE Customer (
-    CustomerID INT(8) NOT NULL,
+    CustomerID INT NOT NULL,
     Name VARCHAR(50),
     Address VARCHAR(75),
     Phone VARCHAR(50),
@@ -12,8 +12,8 @@ CREATE TABLE Customer (
 CREATE TABLE Book (
     ISBN VARCHAR(35) NOT NULL,
     Title VARCHAR(75),
-    NumberOfPages INT(10),
-    Year INT(4),
+    NumberOfPages INT,
+    PrintYear INT,
     Publisher VARCHAR(50),
     CONSTRAINT Book_PK PRIMARY KEY (ISBN)
     );
@@ -27,13 +27,13 @@ CREATE TABLE Author (
  
 CREATE TABLE Copy (
     ISBN VARCHAR(35) NOT NULL,
-    CopyID INT(8) NOT NULL,
-    CONSTRAINT Copy_PK PRIMARY KEY (ISBN, CopyID)
+    CopyID INT NOT NULL,
+    CONSTRAINT Copy_PK PRIMARY KEY (ISBN, CopyID),
     CONSTRAINT Copy_FK FOREIGN KEY (ISBN) REFERENCES Book (ISBN)
     );
  
 CREATE TABLE Reserv (
-    CustomerID INT(8) NOT NULL,
+    CustomerID INT NOT NULL,
     ISBN VARCHAR(35) NOT NULL,
     RDate VARCHAR(10),
     CONSTRAINT Reserv_PK PRIMARY KEY (CustomerID, ISBN),
@@ -43,8 +43,8 @@ CREATE TABLE Reserv (
  
 CREATE TABLE Borrow (
     ISBN VARCHAR(35) NOT NULL,
-    CustomerID INT(8) NOT NULL,
-    CopyID INT(8) NOT NULL,
+    CustomerID INT NOT NULL,
+    CopyID INT NOT NULL,
     CONSTRAINT Borrow_PK PRIMARY KEY (ISBN, CustomerID, CopyID),
     CONSTRAINT Borrow_Book_FK FOREIGN KEY (ISBN) REFERENCES Book (ISBN),
     CONSTRAINT Borrow_Customer_FK FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
