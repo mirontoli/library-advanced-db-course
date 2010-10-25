@@ -1,3 +1,6 @@
+-- Create database Anatoly 20101015
+CREATE DATABASE bibliotek
+
 -- CREATE TABLES
 -- 20101025
 -- Pontus
@@ -35,8 +38,8 @@ CREATE TABLE Copy (
 CREATE TABLE Reserv (
     CustomerID INT NOT NULL,
     ISBN VARCHAR(35) NOT NULL,
-    RDate VARCHAR(10),
-    CONSTRAINT Reserv_PK PRIMARY KEY (CustomerID, ISBN),
+    RDate DATETIME DEFAULT GETDATE(),
+    CONSTRAINT Reserv_PK PRIMARY KEY (CustomerID, ISBN, RDate),
     CONSTRAINT Reserv_Customer_FK FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID),
     CONSTRAINT Reserv_Book_FK FOREIGN KEY (ISBN) REFERENCES Book (ISBN)
     );
@@ -45,8 +48,9 @@ CREATE TABLE Borrow (
     ISBN VARCHAR(35) NOT NULL,
     CustomerID INT NOT NULL,
     CopyID INT NOT NULL,
-    CONSTRAINT Borrow_PK PRIMARY KEY (ISBN, CustomerID, CopyID),
-    CONSTRAINT Borrow_Book_FK FOREIGN KEY (ISBN) REFERENCES Book (ISBN),
+	BDate DATETIME DEFAULT GETDATE(),
+    CONSTRAINT Borrow_PK PRIMARY KEY (ISBN, CustomerID, CopyID, BDate),
+    CONSTRAINT Borrow_Copy_FK FOREIGN KEY (ISBN, CopyID) REFERENCES Copy (ISBN, CopyID),
     CONSTRAINT Borrow_Customer_FK FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
     );
 
