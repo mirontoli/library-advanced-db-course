@@ -11,3 +11,5 @@ c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug
 c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\GenerateResource.write.1.tlog
 c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\Biblan.exe
 c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\Biblan.pdb
+C:\svn\trunk\Biblan\Biblan\obj\x86\Debug\Biblan.exe
+C:\svn\trunk\Biblan\Biblan\obj\x86\Debug\Biblan.pdb
