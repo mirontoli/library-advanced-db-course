@@ -4,5 +4,6 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="416,276,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" IsCancel="True" Click="btnCancel_Click" />
+        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="170,53,0,0" Name="lblTest" VerticalAlignment="Top" />
     </Grid>
 </Window>

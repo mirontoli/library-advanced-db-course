@@ -22,6 +22,21 @@ namespace Biblan
         public MainWindow()
         {
             InitializeComponent();
+            TestConnection();
+        }
+
+        private void TestConnection()
+        {
+            lblTest.Content = "Hej";
+            bibliotekDataContext dataContext = new bibliotekDataContext();
+            var query = from c in dataContext.search_books_titles("")
+                        select new { c.ISBN, c.Title };
+            
+            foreach (var book in query)
+            {
+                lblTest.Content += "\r\n" + book.ISBN + " - " + book.Title;
+                lblTest.Content += "tu";
+            }
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

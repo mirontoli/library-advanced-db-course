@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bibliotek" Class="bibliotekDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=anatoly.mine.nu;Initial Catalog=bibliotek;Persist Security Info=True;User ID=bibliotek" SettingsObjectName="Biblan.Properties.Settings" SettingsPropertyName="bibliotekConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.search_books_titles" Method="search_books_titles" IsComposable="true">
+    <Parameter Name="title" Type="System.String" DbType="VarChar(75)" />
+    <ElementType Name="search_books_titlesResult">
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="NumberOfPages" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
