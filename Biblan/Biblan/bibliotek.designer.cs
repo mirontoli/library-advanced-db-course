@@ -30,6 +30,9 @@ namespace Biblan
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertBook(Book instance);
+    partial void UpdateBook(Book instance);
+    partial void DeleteBook(Book instance);
     #endregion
 		
 		public bibliotekDataContext() : 
@@ -62,10 +65,176 @@ namespace Biblan
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<Book> Books
+		{
+			get
+			{
+				return this.GetTable<Book>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.search_books_titles", IsComposable=true)]
 		public IQueryable<search_books_titlesResult> search_books_titles([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(75)")] string title)
 		{
 			return this.CreateMethodCallQuery<search_books_titlesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), title);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Book")]
+	public partial class Book : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _ISBN;
+		
+		private string _Title;
+		
+		private System.Nullable<int> _NumberOfPages;
+		
+		private System.Nullable<int> _PrintYear;
+		
+		private string _Publisher;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnISBNChanging(string value);
+    partial void OnISBNChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnNumberOfPagesChanging(System.Nullable<int> value);
+    partial void OnNumberOfPagesChanged();
+    partial void OnPrintYearChanging(System.Nullable<int> value);
+    partial void OnPrintYearChanged();
+    partial void OnPublisherChanging(string value);
+    partial void OnPublisherChanged();
+    #endregion
+		
+		public Book()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(35) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ISBN
+		{
+			get
+			{
+				return this._ISBN;
+			}
+			set
+			{
+				if ((this._ISBN != value))
+				{
+					this.OnISBNChanging(value);
+					this.SendPropertyChanging();
+					this._ISBN = value;
+					this.SendPropertyChanged("ISBN");
+					this.OnISBNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(75)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfPages", DbType="Int")]
+		public System.Nullable<int> NumberOfPages
+		{
+			get
+			{
+				return this._NumberOfPages;
+			}
+			set
+			{
+				if ((this._NumberOfPages != value))
+				{
+					this.OnNumberOfPagesChanging(value);
+					this.SendPropertyChanging();
+					this._NumberOfPages = value;
+					this.SendPropertyChanged("NumberOfPages");
+					this.OnNumberOfPagesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrintYear", DbType="Int")]
+		public System.Nullable<int> PrintYear
+		{
+			get
+			{
+				return this._PrintYear;
+			}
+			set
+			{
+				if ((this._PrintYear != value))
+				{
+					this.OnPrintYearChanging(value);
+					this.SendPropertyChanging();
+					this._PrintYear = value;
+					this.SendPropertyChanged("PrintYear");
+					this.OnPrintYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publisher", DbType="VarChar(50)")]
+		public string Publisher
+		{
+			get
+			{
+				return this._Publisher;
+			}
+			set
+			{
+				if ((this._Publisher != value))
+				{
+					this.OnPublisherChanging(value);
+					this.SendPropertyChanging();
+					this._Publisher = value;
+					this.SendPropertyChanged("Publisher");
+					this.OnPublisherChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

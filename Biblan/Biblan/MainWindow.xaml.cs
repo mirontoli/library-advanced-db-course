@@ -27,16 +27,16 @@ namespace Biblan
 
         private void TestConnection()
         {
-            lblTest.Content = "Hej";
+            string output = "";
             bibliotekDataContext dataContext = new bibliotekDataContext();
-            var query = from c in dataContext.search_books_titles("")
+            var query = from c in dataContext.search_books_titles("ma")
                         select new { c.ISBN, c.Title };
-            
+
             foreach (var book in query)
             {
-                lblTest.Content += "\r\n" + book.ISBN + " - " + book.Title;
-                lblTest.Content += "tu";
+                output += book.ISBN + " - " + book.Title + "\r\n";
             }
+            txtBlockTest.Text = output;
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
