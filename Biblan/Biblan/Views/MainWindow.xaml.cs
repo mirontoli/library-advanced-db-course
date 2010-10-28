@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Biblan
+namespace Biblan.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
