@@ -24,7 +24,7 @@ namespace Biblan.Views
         {
             InitializeComponent();
             //TestConnection();
-            TestMyFunction();
+            GetBooksWithMoreThan500Pages();
         }
 
         private void TestConnection()
@@ -41,7 +41,7 @@ namespace Biblan.Views
             txtBlockTest.Text = output;
         }
 
-        private void TestMyFunction()
+        private void GetBooksWithMoreThan500Pages()
         {
             string output = "";
             bibliotekDataContext dataContext = new bibliotekDataContext();
