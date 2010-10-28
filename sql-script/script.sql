@@ -48,7 +48,7 @@ CREATE TABLE Borrow (
     ISBN VARCHAR(35) NOT NULL,
     CustomerID INT NOT NULL,
     CopyID INT NOT NULL,
-	BDate DATETIME DEFAULT GETDATE(),
+    BDate DATETIME DEFAULT GETDATE(),
     CONSTRAINT Borrow_PK PRIMARY KEY (ISBN, CustomerID, CopyID, BDate),
     CONSTRAINT Borrow_Copy_FK FOREIGN KEY (ISBN, CopyID) REFERENCES Copy (ISBN, CopyID),
     CONSTRAINT Borrow_Customer_FK FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
@@ -64,6 +64,15 @@ AS RETURN (
 	SELECT *
 	FROM Book
 	WHERE Title LIKE '%' + @title + '%'
+)
+
+-- Create functions Pontus 20101028
+CREATE FUNCTION search_number_of_book_pages()
+RETURNS TABLE
+AS RETURN (
+	SELECT *
+	FROM Book
+	WHERE NumberOfPages > 500
 )
 
 
