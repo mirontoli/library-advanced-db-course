@@ -75,7 +75,15 @@ AS RETURN (
 	WHERE NumberOfPages > 500
 )
 
+CREATE FUNCTION search_book_print_year()
+RETURNS TABLE
+AS RETURN (
+		SELECT *
+		FROM Book
+		WHERE PrintYear < 1995
+)
 
+-- Create procedures Anatoly 20101026
 CREATE PROCEDURE usp_add_book
 @isbn VARCHAR(35),
 @title VARCHAR(75),
