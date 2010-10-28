@@ -7,5 +7,16 @@ namespace Biblan.Model
 {
     class Copy
     {
+        public string ISBN
+        {
+            get;
+            set;
+        }
+
+        public int CopyID
+        {
+            get;
+            set;
+        }
     }
 }
