@@ -10,4 +10,13 @@
       <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.search_number_of_book_pages" Method="search_number_of_book_pages" IsComposable="true">
+    <ElementType Name="search_number_of_book_pagesResult">
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="NumberOfPages" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

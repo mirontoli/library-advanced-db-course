@@ -22,7 +22,8 @@ namespace Biblan
         public MainWindow()
         {
             InitializeComponent();
-            TestConnection();
+            //TestConnection();
+            TestMyFunction();
         }
 
         private void TestConnection()
@@ -35,6 +36,20 @@ namespace Biblan
             foreach (var book in query)
             {
                 output += book.ISBN + " - " + book.Title + "\r\n";
+            }
+            txtBlockTest.Text = output;
+        }
+
+        private void TestMyFunction()
+        {
+            string output = "";
+            bibliotekDataContext dataContext = new bibliotekDataContext();
+            var query = from c in dataContext.search_number_of_book_pages()
+                        select new { c.Title, c.NumberOfPages };
+
+            foreach (var book in query)
+            {
+                output += book.Title + " - " + book.NumberOfPages + "\r\n";            
             }
             txtBlockTest.Text = output;
         }
