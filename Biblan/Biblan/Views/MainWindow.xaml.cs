@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Biblan.Model;
 
 namespace Biblan.Views
 {
@@ -45,14 +46,15 @@ namespace Biblan.Views
             string output = "";
             bibliotekDataContext dataContext = new bibliotekDataContext();
             var query = from c in dataContext.search_number_of_book_pages()
-                        select new { c.Title, c.NumberOfPages };
+                        select new Book { Title = c.Title, NumberOfPages = (int) c.NumberOfPages };
 
-            foreach (var book in query)
+            List<Book> books = query.ToList();
+
+            foreach (Book book in books)
             {
-                output += book.Title + " - " + book.NumberOfPages + "\r\n";            
+                output += book.Title.Substring(0,7) + " - " + book.NumberOfPages + "\r\n";            
             }
-            txtBlockTest.Text = output;
-        }
+            txtBlockTest.Text = output;        }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
