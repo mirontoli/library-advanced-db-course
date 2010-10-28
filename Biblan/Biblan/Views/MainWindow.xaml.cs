@@ -25,6 +25,7 @@ namespace Biblan.Views
             InitializeComponent();
             //TestConnection();
             GetBooksWithMoreThan500Pages();
+            //AddBook();
         }
 
         private void TestConnection()
@@ -59,6 +60,12 @@ namespace Biblan.Views
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void AddBook()
+        {
+            bibliotekDataContext dataContext = new bibliotekDataContext();
+            dataContext.usp_add_book("0316769533", "The Catcher in the Rye", 276, 1951, "Little, Brown and Company");
         }
     }
 }

@@ -73,6 +73,13 @@ namespace Biblan
 		{
 			return this.CreateMethodCallQuery<search_number_of_book_pagesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_add_book")]
+		public int usp_add_book([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(35)")] string isbn, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(75)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> number_of_pages, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> print_year, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string publisher)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), isbn, title, number_of_pages, print_year, publisher);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class search_books_titlesResult
