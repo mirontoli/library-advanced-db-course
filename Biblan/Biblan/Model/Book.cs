@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Biblan.Model
 {
-    class Book
+    public class Book
     {
         public string ISBN
         {
