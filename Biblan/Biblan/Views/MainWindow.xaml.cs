@@ -24,7 +24,8 @@ namespace Biblan.Views
         {
             InitializeComponent();
             //TestConnection();
-            GetBooksWithMoreThan500Pages();
+            //GetBooksWithMoreThan500Pages();
+            GetBooksOlderThan15Years();
             //AddBook();
         }
 
@@ -55,7 +56,22 @@ namespace Biblan.Views
             {
                 output += book.Title.Substring(0,7) + " - " + book.NumberOfPages + "\r\n";            
             }
-            txtBlockTest.Text = output;        }
+            txtBlockTest.Text = output;        
+        }
+
+        private void GetBooksOlderThan15Years()
+        {
+            string output = "";
+            bibliotekDataContext dataContext = new bibliotekDataContext();
+            var query = from c in dataContext.search_book_print_year()
+                        select new { c.Title, c.PrintYear };
+
+            foreach (var book in query)
+            {
+                output += book.Title + " - " + book.PrintYear + "\r\n";
+            }
+            txtBlockTest.Text = output;
+        }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
