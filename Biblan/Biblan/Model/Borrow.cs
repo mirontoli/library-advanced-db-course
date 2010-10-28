@@ -7,5 +7,30 @@ namespace Biblan.Model
 {
     class Borrow
     {
+        public string ISBN
+        {
+            get;
+            set;
+        }
+
+        public int CustomerID
+        {
+            get;
+            set;
+        }
+
+        public int CopyID
+        {
+            get;
+            set;
+        }
+
+        public int BDate
+        {
+            get;
+            set;
+        }
+
+
     }
 }
