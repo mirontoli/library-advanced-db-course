@@ -36,4 +36,16 @@
       <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.usp_add_copy" Method="usp_add_copy">
+    <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
+    <Parameter Name="copyid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_add_customer" Method="usp_add_customer">
+    <Parameter Name="customerid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="address" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="phone" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
