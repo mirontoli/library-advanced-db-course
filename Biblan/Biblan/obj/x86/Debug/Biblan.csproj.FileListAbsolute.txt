@@ -1,0 +1,15 @@
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\bin\Debug\Biblan.exe
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\bin\Debug\Biblan.pdb
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\MainWindow.baml
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\MainWindow.g.cs
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\App.g.cs
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\Biblan_MarkupCompile.cache
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\Biblan.g.resources
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\Biblan.Properties.Resources.resources
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\Biblan.exe
+c:\users\tolle\documents\visual studio 2010\Projects\Biblan\Biblan\obj\x86\Debug\Biblan.pdb
+C:\svn\trunk\Biblan\Biblan\obj\x86\Debug\Biblan.exe
+C:\svn\trunk\Biblan\Biblan\obj\x86\Debug\Biblan.pdb
