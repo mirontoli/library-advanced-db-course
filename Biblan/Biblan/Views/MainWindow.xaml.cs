@@ -27,6 +27,8 @@ namespace Biblan.Views
             //GetBooksWithMoreThan500Pages();
             GetBooksOlderThan15Years();
             //AddBook();
+            //AddCustomer();
+            //AddCopy();
         }
 
         private void TestConnection()
@@ -83,5 +85,15 @@ namespace Biblan.Views
             bibliotekDataContext dataContext = new bibliotekDataContext();
             dataContext.usp_add_book("0316769533", "The Catcher in the Rye", 276, 1951, "Little, Brown and Company");
         }
-    }
+        private void AddCustomer()
+        {
+            bibliotekDataContext dataContext = new bibliotekDataContext();
+            dataContext.usp_add_customer(0001, "Nils Nilsson", "Sveagatan 31 A", "040-123456");
+        }
+        private void AddCopy()
+        {
+            bibliotekDataContext dataContext = new bibliotekDataContext();
+            dataContext.usp_add_copy("0316769533", 0001);
+        }
+    } 
 }
