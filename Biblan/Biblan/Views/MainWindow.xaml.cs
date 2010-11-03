@@ -95,5 +95,11 @@ namespace Biblan.Views
             bibliotekDataContext dataContext = new bibliotekDataContext();
             dataContext.usp_add_copy("0316769533", 0001);
         }
+
+        private void btnSpike_Click(object sender, RoutedEventArgs e)
+        {
+            BindingSpike bs = new BindingSpike();
+            bs.Show();
+        }
     } 
 }

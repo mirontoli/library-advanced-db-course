@@ -5,5 +5,6 @@
     <Grid>
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="416,276,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" IsCancel="True" Click="btnCancel_Click" />
         <TextBlock Height="84" HorizontalAlignment="Left" Margin="204,75,0,0" Name="txtBlockTest" Text="TextBlock" VerticalAlignment="Top" Width="232" />
+        <Button Content="BindingSpike" Height="23" HorizontalAlignment="Left" Margin="195,269,0,0" Name="btnSpike" VerticalAlignment="Top" Width="97" Click="btnSpike_Click" />
     </Grid>
 </Window>

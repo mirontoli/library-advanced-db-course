@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Biblan.Controller
 {
-    class controller
+    public class Controller
     {
     }
 }
