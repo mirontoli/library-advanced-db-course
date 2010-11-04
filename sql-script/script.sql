@@ -89,6 +89,15 @@ AS RETURN (
 		WHERE PrintYear < 1995
 )
 
+CREATE FUNCTION search_books_with_a_title_that_begins_with_A()
+RETURNS TABLE
+AS RETURN (
+	SELECT *
+	FROM Book
+	WHERE Title LIKE 'A' + '%'
+)
+
+
 -- Create procedures Anatoly 20101026
 CREATE PROCEDURE usp_add_book
 @isbn VARCHAR(35),
