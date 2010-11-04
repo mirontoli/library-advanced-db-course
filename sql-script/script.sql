@@ -18,14 +18,8 @@ CREATE TABLE Book (
     NumberOfPages INT,
     PrintYear INT,
     Publisher VARCHAR(50),
+    Author VARCHAR(50),
     CONSTRAINT Book_PK PRIMARY KEY (ISBN)
-    );
- 
-CREATE TABLE Author (
-    ISBN VARCHAR(35) NOT NULL,
-    Authors VARCHAR(50) NOT NULL,
-    CONSTRAINT Author_PK PRIMARY KEY (ISBN, Authors),
-    CONSTRAINT Author_FK FOREIGN KEY (ISBN) REFERENCES Book (ISBN)
     );
  
 CREATE TABLE Copy (
