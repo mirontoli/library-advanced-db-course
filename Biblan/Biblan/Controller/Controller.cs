@@ -2,11 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Biblan.Model;
 
 namespace Biblan.Controller
 {
     public class Controller
     {
+        private static Controller controller;
+        bibliotekDataContext dataContext = new bibliotekDataContext();
+        // private in order to disable instantiating
+        private Controller()
+        {
+        }
+        public static Controller GetInstance()
+        {
+            if (controller == null)
+            {
+                controller = new Controller();
+            }
+            return controller;
+        }
+        public List<Book> GetAllBooks()
+        {
+            var query = from c in dataContext.search_books_titles("")
+                        select new Book { Title = c.Title, NumberOfPages = (int)c.NumberOfPages, Publisher = c.Publisher, ISBN = c.ISBN };
+
+            List<Book> books = query.ToList();
+            return books;
+        }
         #region gamla tester
         //private void AddBook()
         //{

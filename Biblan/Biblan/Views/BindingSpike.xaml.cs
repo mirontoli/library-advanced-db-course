@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Biblan.Model;
-using System.Collections.ObjectModel;
+using Biblan.Controller;
 
 namespace Biblan.Views
 {
@@ -20,6 +20,7 @@ namespace Biblan.Views
     /// </summary>
     public partial class BindingSpike : Window
     {
+        private Controller.Controller controller = Controller.Controller.GetInstance();
         public BindingSpike()
         {
             InitializeComponent();
@@ -28,13 +29,7 @@ namespace Biblan.Views
 
         private void TestBind()
         {
-            bibliotekDataContext dataContext = new bibliotekDataContext();
-            var query = from c in dataContext.search_books_titles("")
-                        select new Book { Title = c.Title, NumberOfPages = (int)c.NumberOfPages, Publisher = c.Publisher, ISBN = c.ISBN };
-
-            List<Book> books = query.ToList();
-
-            lwBinding.ItemsSource = books; 
+            lvBinding.ItemsSource = controller.GetAllBooks(); 
         }
     }
 }

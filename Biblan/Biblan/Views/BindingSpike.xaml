@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="BindingSpike" Height="300" Width="459">
     <Grid>
-        <ListView Height="237" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lwBinding" VerticalAlignment="Top" Width="413" ItemsSource="{Binding}" IsEnabled="True" DataContext="{Binding}">
+        <ListView Height="237" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lvBinding" VerticalAlignment="Top" Width="413" ItemsSource="{Binding}" IsEnabled="True" DataContext="{Binding}">
                 <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Title" Width="200" DisplayMemberBinding="{Binding Path=Title}"/>
