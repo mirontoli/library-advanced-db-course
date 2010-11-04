@@ -123,15 +123,22 @@ CREATE PROCEDURE usp_add_copy
 @isbn VARCHAR(35)
 AS
 	BEGIN
-		declare @copyid INT
-		SELECT @copyid = MAX(CopyID) + 1 -- if no books @copyid NULL
-		FROM Copy
-		WHERE ISBN = @isbn
-		IF @copyid IS NULL
+		IF NOT EXISTS (SELECT isbn FROM Book WHERE isbn = @isbn)
 			BEGIN
-				SET @copyid = 1
+				RAISERROR('There is no such book', 11, 1);
 			END
-		INSERT INTO Copy values(@isbn, @copyid)
+		ELSE 
+			BEGIN
+				declare @copyid INT
+				SELECT @copyid = MAX(CopyID) + 1
+				FROM Copy
+				WHERE ISBN = @isbn
+				IF @copyid IS NULL
+					BEGIN
+						SET @copyid = 1
+					END
+				INSERT INTO Copy values(@isbn, @copyid)
+			END
 	END
 
 
