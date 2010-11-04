@@ -2,8 +2,8 @@
 CREATE DATABASE bibliotek
 
 -- CREATE TABLES
--- 20101025
--- Pontus
+-- Pontus 20101025
+-- revision Pontus 20101104
 CREATE TABLE Customer (
     CustomerID INT NOT NULL,
     Name VARCHAR(50),
@@ -91,5 +91,7 @@ AS
 	end
 
 -- inserts Anatoly 20101026
-insert into Book values('9789121100523', 'Latinsk grammatik', 247, 1989, 'Almqvist & Wiksell läromedel');
-exec usp_add_book '9781412929554', 'Global shift, mapping the changing contours of the world economy', 599, 2007, 'Sage'
+-- revision Pontus 20101104
+insert into Book values('9789121100523', 'Latinsk grammatik', 247, 1989, 'Almqvist & Wiksell läromedel', 'Erik Tidner');
+exec usp_add_book '9781412929554', 'Global Shift: Mapping the Changing Contours of the World Economy', 599, 2007, 'Sage', 'Peter Dicken'
+exec usp_add_book '0316769533', 'The Catcher in the Rye', 276, 1951, 'Little, Brown and Company', 'J. D. Salinger'
