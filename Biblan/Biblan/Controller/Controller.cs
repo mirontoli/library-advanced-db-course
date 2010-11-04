@@ -8,7 +8,7 @@ namespace Biblan.Controller
 {
     public class Controller
     {
-        private static Controller controller;
+        private static Controller controllerSingleton;
         bibliotekDataContext dataContext = new bibliotekDataContext();
         // private in order to disable instantiating
         private Controller()
@@ -16,11 +16,11 @@ namespace Biblan.Controller
         }
         public static Controller GetInstance()
         {
-            if (controller == null)
+            if (controllerSingleton == null)
             {
-                controller = new Controller();
+                controllerSingleton = new Controller();
             }
-            return controller;
+            return controllerSingleton;
         }
         public List<Book> GetAllBooks()
         {
