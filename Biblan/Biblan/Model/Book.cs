@@ -36,6 +36,11 @@ namespace Biblan.Model
             get;
             set;
         }
+        public string Author
+        {
+            get;
+            set;
+        }
 
     }
 }

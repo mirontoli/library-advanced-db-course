@@ -83,7 +83,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Authors.cs" />
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\Borrow.cs" />
     <Compile Include="Model\Copy.cs" />
