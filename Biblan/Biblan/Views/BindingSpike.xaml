@@ -6,8 +6,10 @@
         <ListView Height="237" HorizontalAlignment="Left" Margin="12,12,0,0" Name="lvBinding" VerticalAlignment="Top" Width="413" ItemsSource="{Binding}" IsEnabled="True" DataContext="{Binding}">
                 <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Title" Width="200" DisplayMemberBinding="{Binding Path=Title}"/>
-                    <GridViewColumn Header="Publisher" Width="200" DisplayMemberBinding="{Binding Path=Publisher}"/>
+                    <GridViewColumn Header="ISBN" Width="100" DisplayMemberBinding="{Binding Path=ISBN}"/>
+                    <GridViewColumn Header="Title" Width="100" DisplayMemberBinding="{Binding Path=Title}"/>                  
+                    <GridViewColumn Header="Publisher" Width="100" DisplayMemberBinding="{Binding Path=Publisher}"/>
+                    <GridViewColumn Header="Author" Width="100" DisplayMemberBinding="{Binding Path=Author}"/>
                 </GridView>
             </ListView.View>
         </ListView>
