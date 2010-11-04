@@ -29,7 +29,7 @@ namespace Biblan.Controller
                                           NumberOfPages = (int)c.NumberOfPages, 
                                           Publisher = c.Publisher, 
                                           ISBN = c.ISBN,
-                                          Author = c.Title  };
+                                          Author = c.Author };
 
             List<Book> books = query.ToList();
             return books;
