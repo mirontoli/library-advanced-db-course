@@ -118,17 +118,22 @@ AS
 			END
 	end
 
--- Pontus 20101104
+-- Pontus 20101104. Updated by Anatoly (if)
 CREATE PROCEDURE usp_add_copy
 @isbn VARCHAR(35)
 AS
-	begin
-	declare @copyid INT
-	SELECT @copyid = MAX(CopyID) + 1
-	FROM Copy
-	WHERE ISBN = @isbn
-	INSERT INTO Copy values(@isbn, @copyid)
-	end
+	BEGIN
+		declare @copyid INT
+		SELECT @copyid = MAX(CopyID) + 1 -- if no books @copyid NULL
+		FROM Copy
+		WHERE ISBN = @isbn
+		IF @copyid IS NULL
+			BEGIN
+				SET @copyid = 1
+			END
+		INSERT INTO Copy values(@isbn, @copyid)
+	END
+
 
 -- inserts Anatoly 20101026
 -- revision Pontus 20101104
