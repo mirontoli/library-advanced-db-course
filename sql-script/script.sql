@@ -48,7 +48,16 @@ CREATE TABLE Borrow (
     CONSTRAINT Borrow_Customer_FK FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
     );
 
-
+CREATE TABLE Borrow_History (
+    ISBN VARCHAR(35) NOT NULL,
+    CustomerID INT NOT NULL,
+    CopyID INT NOT NULL,
+    BDate DATETIME,
+	RDate DATETIME DEFAULT GETDATE(),
+    CONSTRAINT Borrow_History_PK PRIMARY KEY (ISBN, CustomerID, CopyID, BDate),
+    CONSTRAINT Borrow_History_Copy_FK FOREIGN KEY (ISBN, CopyID) REFERENCES Copy (ISBN, CopyID),
+    CONSTRAINT Borrow__History_Customer_FK FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+    );
 
 
 -- Create functions Anatoly 20101026
@@ -95,3 +104,12 @@ AS
 insert into Book values('9789121100523', 'Latinsk grammatik', 247, 1989, 'Almqvist & Wiksell läromedel', 'Erik Tidner');
 exec usp_add_book '9781412929554', 'Global Shift: Mapping the Changing Contours of the World Economy', 599, 2007, 'Sage', 'Peter Dicken'
 exec usp_add_book '0316769533', 'The Catcher in the Rye', 276, 1951, 'Little, Brown and Company', 'J. D. Salinger'
+
+-- CREATE TRIGGER Dino 20101104
+CREATE TRIGGER SaveBorrowHistory
+ON Borrow
+AFTER DELETE
+AS
+INSERT INTO Borrow_History (ISBN, CustomerID, CopyID, BDate)
+SELECT *
+FROM deleted
