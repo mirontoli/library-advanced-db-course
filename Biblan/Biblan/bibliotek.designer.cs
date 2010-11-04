@@ -74,13 +74,6 @@ namespace Biblan
 			return this.CreateMethodCallQuery<search_number_of_book_pagesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_add_book")]
-		public int usp_add_book([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(35)")] string isbn, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(75)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> number_of_pages, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> print_year, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string publisher)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), isbn, title, number_of_pages, print_year, publisher);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.search_book_print_year", IsComposable=true)]
 		public IQueryable<search_book_print_yearResult> search_book_print_year()
 		{
@@ -98,6 +91,13 @@ namespace Biblan
 		public int usp_add_customer([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> customerid, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string phone)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerid, name, address, phone);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_add_book")]
+		public int usp_add_book([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(35)")] string isbn, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(75)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> number_of_pages, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> print_year, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string publisher, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string author)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), isbn, title, number_of_pages, print_year, publisher, author);
 			return ((int)(result.ReturnValue));
 		}
 	}
