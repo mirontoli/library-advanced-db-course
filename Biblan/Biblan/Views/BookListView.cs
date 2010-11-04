@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace Biblan.Views
 {
@@ -45,9 +46,15 @@ namespace Biblan.Views
     /// </summary>
     public class BookListView : ListView
     {
+        GridViewColumnHeader _lastHeaderClicked = null;
+        ListSortDirection _lastDirection = ListSortDirection.Ascending;
         static BookListView()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(BookListView), new FrameworkPropertyMetadata(typeof(BookListView)));
+        }
+        public BookListView()
+        {
+            
         }
     }
 }
