@@ -21,6 +21,17 @@
     <Parameter Name="author" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.search_books_titles" Method="search_books_titles" IsComposable="true">
+    <Parameter Name="title" Type="System.String" DbType="VarChar(75)" />
+    <ElementType Name="search_books_titlesResult">
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="NumberOfPages" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.search_book_print_year" Method="search_book_print_year" IsComposable="true">
     <ElementType Name="search_book_print_yearResult">
       <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
@@ -28,20 +39,11 @@
       <Column Name="NumberOfPages" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PrintYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.search_number_of_book_pages" Method="search_number_of_book_pages" IsComposable="true">
     <ElementType Name="search_number_of_book_pagesResult">
-      <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
-      <Column Name="Title" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
-      <Column Name="NumberOfPages" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PrintYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.search_books_titles" Method="search_books_titles" IsComposable="true">
-    <Parameter Name="title" Type="System.String" DbType="VarChar(75)" />
-    <ElementType Name="search_books_titlesResult">
       <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
       <Column Name="Title" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
       <Column Name="NumberOfPages" Type="System.Int32" DbType="Int" CanBeNull="true" />
