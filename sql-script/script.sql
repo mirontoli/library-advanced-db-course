@@ -1,5 +1,8 @@
 -- Create database Anatoly 20101015
 CREATE DATABASE bibliotek
+GO
+USE bibliotek
+GO
 
 -- CREATE TABLES
 -- Pontus 20101025
@@ -96,7 +99,14 @@ CREATE PROCEDURE usp_add_book
 @author VARCHAR(50)
 AS
 	begin
-		INSERT INTO Book values(@isbn, @title, @number_of_pages, @print_year, @publisher, @author)
+		IF NOT EXISTS(SELECT isbn FROM Book where isbn = @isbn)
+			BEGIN 
+				INSERT INTO Book values(@isbn, @title, @number_of_pages, @print_year, @publisher, @author)
+			END
+		ELSE 
+			BEGIN
+				RAISERROR('There is already such a book', 11, 1)
+			END
 	end
 
 -- inserts Anatoly 20101026
