@@ -83,10 +83,11 @@ CREATE PROCEDURE usp_add_book
 @title VARCHAR(75),
 @number_of_pages INT,
 @print_year INT,
-@publisher VARCHAR(50)
+@publisher VARCHAR(50),
+@author VARCHAR(50)
 AS
 	begin
-		INSERT INTO Book values(@isbn, @title, @number_of_pages, @print_year, @publisher)
+		INSERT INTO Book values(@isbn, @title, @number_of_pages, @print_year, @publisher, @author)
 	end
 
 -- inserts Anatoly 20101026
