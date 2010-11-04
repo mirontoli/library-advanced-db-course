@@ -135,3 +135,27 @@ AS
 INSERT INTO Borrow_History (ISBN, CustomerID, CopyID, BDate)
 SELECT *
 FROM deleted
+
+-- Create Procedures Dino 20101104
+CREATE PROCEDURE usp_borrow_book
+@isbn VARCHAR(35),
+@customerID VARCHAR(75),
+@copyID INT
+AS
+	begin
+		INSERT INTO Borrow values(@isbn, @customerID, @copyID)
+	end
+
+CREATE PROCEDURE usp_return_book
+@isbn VARCHAR(35),
+@customerID VARCHAR(75),
+@copyID INT,
+@bdate DATETIME
+AS
+	begin
+		DELETE FROM Borrow
+		WHERE ISBN = @isbn
+		AND CustomerID = @customerID
+		AND CopyID = @copyID
+		AND BDate = @bdate
+	end
