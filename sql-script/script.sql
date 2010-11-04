@@ -109,6 +109,18 @@ AS
 			END
 	end
 
+-- Pontus 20101104
+CREATE PROCEDURE usp_add_copy
+@isbn VARCHAR(35)
+AS
+	begin
+	declare @copyid INT
+	SELECT @copyid = MAX(CopyID) + 1
+	FROM Copy
+	WHERE ISBN = @isbn
+	INSERT INTO Copy values(@isbn, @copyid)
+	end
+
 -- inserts Anatoly 20101026
 -- revision Pontus 20101104
 insert into Book values('9789121100523', 'Latinsk grammatik', 247, 1989, 'Almqvist & Wiksell läromedel', 'Erik Tidner');
