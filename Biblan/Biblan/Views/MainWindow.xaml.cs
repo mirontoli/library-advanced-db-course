@@ -35,5 +35,10 @@ namespace Biblan.Views
             BindingSpike bs = new BindingSpike();
             bs.Show();
         }
+
+        private void btnSmallExtras_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.Controller.GetInstance().ShowSmallExtrasWindow();
+        }
     } 
 }

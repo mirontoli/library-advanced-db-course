@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Biblan.Model;
+using Biblan.Views;
 
 namespace Biblan.Controller
 {
@@ -94,5 +95,11 @@ namespace Biblan.Controller
         //    txtBlockTest.Text = output;
         //}
         #endregion
+
+        public void ShowSmallExtrasWindow()
+        {
+            SmallExtras sx = new SmallExtras();
+            sx.Show();
+        }
     }
 }

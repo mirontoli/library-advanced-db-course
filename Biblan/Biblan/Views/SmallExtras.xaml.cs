@@ -18,9 +18,17 @@ namespace Biblan.Views
     /// </summary>
     public partial class SmallExtras : Window
     {
+        Controller.Controller controller = Controller.Controller.GetInstance();
+
         public SmallExtras()
         {
             InitializeComponent();
+            TestSmallExtras();
+        }
+
+        private void TestSmallExtras()
+        {
+            lvSmallExtrasBooks.ItemsSource = controller.GetAllBooks();
         }
 
         private void btnMoreThanOneBook_Click(object sender, RoutedEventArgs e)
