@@ -51,4 +51,14 @@
     <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.search_books_with_a_title_that_begins_with_A" Method="search_books_with_a_title_that_begins_with_A" IsComposable="true">
+    <ElementType Name="search_books_with_a_title_that_begins_with_AResult">
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="NumberOfPages" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

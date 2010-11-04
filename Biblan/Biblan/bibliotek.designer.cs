@@ -100,6 +100,12 @@ namespace Biblan
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), isbn);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.search_books_with_a_title_that_begins_with_A", IsComposable=true)]
+		public IQueryable<search_books_with_a_title_that_begins_with_AResult> search_books_with_a_title_that_begins_with_A()
+		{
+			return this.CreateMethodCallQuery<search_books_with_a_title_that_begins_with_AResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
 	}
 	
 	public partial class search_books_titlesResult
@@ -350,6 +356,122 @@ namespace Biblan
 		private string _Author;
 		
 		public search_number_of_book_pagesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(35) NOT NULL", CanBeNull=false)]
+		public string ISBN
+		{
+			get
+			{
+				return this._ISBN;
+			}
+			set
+			{
+				if ((this._ISBN != value))
+				{
+					this._ISBN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(75)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this._Title = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfPages", DbType="Int")]
+		public System.Nullable<int> NumberOfPages
+		{
+			get
+			{
+				return this._NumberOfPages;
+			}
+			set
+			{
+				if ((this._NumberOfPages != value))
+				{
+					this._NumberOfPages = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrintYear", DbType="Int")]
+		public System.Nullable<int> PrintYear
+		{
+			get
+			{
+				return this._PrintYear;
+			}
+			set
+			{
+				if ((this._PrintYear != value))
+				{
+					this._PrintYear = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publisher", DbType="VarChar(50)")]
+		public string Publisher
+		{
+			get
+			{
+				return this._Publisher;
+			}
+			set
+			{
+				if ((this._Publisher != value))
+				{
+					this._Publisher = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author", DbType="VarChar(50)")]
+		public string Author
+		{
+			get
+			{
+				return this._Author;
+			}
+			set
+			{
+				if ((this._Author != value))
+				{
+					this._Author = value;
+				}
+			}
+		}
+	}
+	
+	public partial class search_books_with_a_title_that_begins_with_AResult
+	{
+		
+		private string _ISBN;
+		
+		private string _Title;
+		
+		private System.Nullable<int> _NumberOfPages;
+		
+		private System.Nullable<int> _PrintYear;
+		
+		private string _Publisher;
+		
+		private string _Author;
+		
+		public search_books_with_a_title_that_begins_with_AResult()
 		{
 		}
 		

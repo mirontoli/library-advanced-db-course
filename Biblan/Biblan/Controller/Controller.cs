@@ -65,7 +65,21 @@ namespace Biblan.Controller
         //    }
         //    txtBlockTest.Text = output;        
         //}
+        //private void GetBooksThatHasATitleThatBeginsWithAnA()
+        //{
+        //    string output = "";
+        //    bibliotekDataContext dataContext = new bibliotekDataContext();
+        //    var query = from c in dataContext.search_books_with_a_title_that_begins_with_A()
+        //                select new Book { Title = c.Title, NumberOfPages = (int) c.NumberOfPages, Author = c.Author };
 
+        //    List<Book> books = query.ToList();
+
+        //    foreach (Book book in books)
+        //    {
+        //        output += book.Title.Substring(0,7) + " - " + book.NumberOfPages + " - " + book.Author "\r\n";            
+        //    }
+        //    txtBlockTest.Text = output;        
+        //}
         //private void GetBooksOlderThan15Years()
         //{
         //    string output = "";
