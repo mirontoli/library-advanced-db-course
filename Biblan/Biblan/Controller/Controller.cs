@@ -35,6 +35,21 @@ namespace Biblan.Controller
             List<Book> books = query.ToList();
             return books;
         }
+        public List<Book> GetAllBooksWithMoreThan500Pages()
+        {
+            var query = from c in dataContext.search_number_of_book_pages()
+                        select new Book
+                        {
+                            Title = c.Title,
+                            NumberOfPages = (int)c.NumberOfPages,
+                            Publisher = c.Publisher,
+                            ISBN = c.ISBN,
+                            Author = c.Author
+                        };
+
+            List<Book> books = query.ToList();
+            return books;
+        }
         #region gamla tester
         //private void AddBook()
         //{

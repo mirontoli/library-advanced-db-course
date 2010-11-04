@@ -43,7 +43,7 @@ namespace Biblan.Views
 
         private void btnBooksWithMoreThan500Pages_Click(object sender, RoutedEventArgs e)
         {
-
+            lvSmallExtrasBooks.ItemsSource = controller.GetAllBooksWithMoreThan500Pages();
         }
 
         private void btnBooksBeginningWithA_Click(object sender, RoutedEventArgs e)
