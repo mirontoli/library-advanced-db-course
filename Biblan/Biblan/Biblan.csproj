@@ -67,10 +67,6 @@
     <Compile Include="Views\SmallExtras.xaml.cs">
       <DependentUpon>SmallExtras.xaml</DependentUpon>
     </Compile>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\BindingSpike.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,7 +88,6 @@
     <Compile Include="Views\BindingSpike.xaml.cs">
       <DependentUpon>BindingSpike.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\BookListView.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
