@@ -35,5 +35,30 @@ namespace Biblan.Views
         {
 
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnBooksWithMoreThan500Pages_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBooksBeginningWithA_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBooksOlderThan15Years_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
