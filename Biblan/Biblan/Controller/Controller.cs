@@ -47,8 +47,8 @@ namespace Biblan.Controller
         //}
         //private void AddCopy()
         //{
-        //    bibliotekDataContext dataContext = new bibliotekDataContext();
-        //    dataContext.usp_add_copy("0316769533", 0001);
+            //bibliotekDataContext dataContext = new bibliotekDataContext();
+            //dataContext.usp_add_copy("0316769533", 1);
         //}
         //private void GetBooksWithMoreThan500Pages()
         //{
