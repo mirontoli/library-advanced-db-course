@@ -22,7 +22,22 @@
         <Button Content="Books beginning with A" Height="23" HorizontalAlignment="Left" Margin="0,231,0,0" Name="btnBooksBeginningWithA" VerticalAlignment="Top" Width="200" Click="btnBooksBeginningWithA_Click" />
         <Button Content="Books with more than 500 pages" Height="23" HorizontalAlignment="Left" Margin="0,202,0,0" Name="btnBooksWithMoreThan500Pages" VerticalAlignment="Top" Width="200" Click="btnBooksWithMoreThan500Pages_Click" />
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="384,260,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
-        <ListView Height="159" HorizontalAlignment="Left" Name="lvSmallExtrasCustomers" VerticalAlignment="Top" Width="406" Margin="0,12,0,0" Visibility="Hidden" />
+        <ListView Height="186" 
+                  HorizontalAlignment="Left" 
+                  Name="lvSmallExtrasCustomers" 
+                  VerticalAlignment="Top" 
+                  Width="459" 
+                  Margin="0,-1,0,0" 
+                  Visibility="Hidden">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Customer ID" Width="100" DisplayMemberBinding="{Binding Path=CustomerID}"/>
+                    <GridViewColumn Header="Name" Width="128" DisplayMemberBinding="{Binding Path=CustomerID}"/>
+                    <GridViewColumn Header="Address" Width="125" DisplayMemberBinding="{Binding Path=CustomerID}"/>
+                    <GridViewColumn Header="Phone" Width="100" DisplayMemberBinding="{Binding Path=CustomerID}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button Content="Last book borrowed" Height="23" HorizontalAlignment="Left" Margin="0,260,0,0" Name="btnLastBookBorrowed" VerticalAlignment="Top" Width="200" Click="btnLastBookBorrowed_Click" />
     </Grid>
 </Window>
