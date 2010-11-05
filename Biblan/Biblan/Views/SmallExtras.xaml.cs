@@ -67,5 +67,10 @@ namespace Biblan.Views
         {
 
         }
+
+        private void btnLastBookBorrowed_Click(object sender, RoutedEventArgs e)
+        {
+            lvSmallExtrasBooks.ItemsSource = controller.GetLatestBookBorrowed();
+        }
     }
 }

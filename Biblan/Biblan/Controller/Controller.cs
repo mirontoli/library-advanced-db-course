@@ -80,6 +80,21 @@ namespace Biblan.Controller
             List<Book> books = query.ToList();
             return books;
         }
+        public List<Book> GetLatestBookBorrowed()
+        {
+            var query = from c in dataContext.get_last_book_borrowed()
+                        select new Book
+                        {
+                            Title = c.Title,
+                            NumberOfPages = (int)c.NumberOfPages,
+                            Publisher = c.Publisher,
+                            ISBN = c.ISBN,
+                            Author = c.Author
+                        };
+
+            List<Book> books = query.ToList();
+            return books;
+        }
         #region gamla tester
         //private void AddBook()
         //{
