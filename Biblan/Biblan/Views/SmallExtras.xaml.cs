@@ -28,7 +28,7 @@ namespace Biblan.Views
 
         private void TestSmallExtras()
         {
-            lvSmallExtrasBooks.ItemsSource = controller.GetAllBooks();
+            lvSmallExtrasBooks.ItemsSource = controller.GetAllBooks(); 
         }
 
         private void btnMoreThanOneBook_Click(object sender, RoutedEventArgs e)
