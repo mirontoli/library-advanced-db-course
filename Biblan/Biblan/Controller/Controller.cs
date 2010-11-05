@@ -166,7 +166,8 @@ namespace Biblan.Controller
 
         internal void ShowCustomerViewWindow()
         {
-            throw new NotImplementedException();
+            CustomerView cv = new CustomerView();
+            cv.Show();
         }
     }
 }

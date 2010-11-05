@@ -25,7 +25,7 @@ namespace Biblan.Views
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
@@ -40,7 +40,7 @@ namespace Biblan.Views
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            
         }
     }
 }
