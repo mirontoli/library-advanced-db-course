@@ -44,16 +44,22 @@ namespace Biblan.Views
 
         private void btnBooksWithMoreThan500Pages_Click(object sender, RoutedEventArgs e)
         {
+            lvSmallExtrasBooks.Visibility = Visibility.Visible;
+            lvSmallExtrasCustomers.Visibility = Visibility.Hidden;
             lvSmallExtrasBooks.ItemsSource = controller.GetAllBooksWithMoreThan500Pages();
         }
 
         private void btnBooksBeginningWithA_Click(object sender, RoutedEventArgs e)
         {
+            lvSmallExtrasBooks.Visibility = Visibility.Visible;
+            lvSmallExtrasCustomers.Visibility = Visibility.Hidden;
             lvSmallExtrasBooks.ItemsSource = controller.GetAllBooksThatBeginsWithA();
         }
 
         private void btnBooksOlderThan15Years_Click(object sender, RoutedEventArgs e)
         {
+            lvSmallExtrasBooks.Visibility = Visibility.Visible;
+            lvSmallExtrasCustomers.Visibility = Visibility.Hidden;
             lvSmallExtrasBooks.ItemsSource = controller.GetAllBooksThatAreOlderThan15Years();
         }
 
