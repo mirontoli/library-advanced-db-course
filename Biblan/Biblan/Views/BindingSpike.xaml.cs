@@ -78,5 +78,13 @@ namespace Biblan.Views
             dataView.SortDescriptions.Add(sd);
             dataView.Refresh();
         }
+
+        private void tbFilter_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                MessageBox.Show("you pressed Enter");
+            }
+        }
     }
 }
