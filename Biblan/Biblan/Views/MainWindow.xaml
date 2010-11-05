@@ -1,14 +1,14 @@
 ﻿<Window x:Class="Biblan.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" ResizeMode="NoResize">
+        Title="The Library" Height="350" Width="525">
     <Grid>
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="416,276,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" IsCancel="True" Click="btnCancel_Click" />
         <TextBlock Height="84" HorizontalAlignment="Left" Margin="204,75,0,0" Name="txtBlockTest" Text="TextBlock" VerticalAlignment="Top" Width="232" />
         <Button Content="BindingSpike" Height="23" HorizontalAlignment="Left" Margin="313,276,0,0" Name="btnSpike" VerticalAlignment="Top" Width="97" Click="btnSpike_Click" />
         <Button Content="Search books" Height="23" HorizontalAlignment="Left" Margin="12,276,0,0" Name="btnSearchBooks" VerticalAlignment="Top" Width="85" />
         <Button Content="Customers" Height="23" HorizontalAlignment="Left" Margin="103,276,0,0" Name="btnCustomers" VerticalAlignment="Top" Width="85" />
-        <Button Content="Small Extras" Height="23" HorizontalAlignment="Left" Margin="194,276,0,0" Name="btnSmallExtras" VerticalAlignment="Top" Width="85" Click="btnSmallExtras_Click" />
+        <Button Content="Small Extras" Height="23" HorizontalAlignment="Left" Margin="194,276,0,0" Name="btnSmallExtras" VerticalAlignment="Top" Width="85" />
         <Image Height="150" HorizontalAlignment="Left" Margin="138,12,0,0" Name="imgBooks" Stretch="Fill" VerticalAlignment="Top" Width="200" Source="C:\svn\trunk\Biblan\Biblan\Images\booksimage.jpg" />
         <Label Content="Welcome to the library!" Height="52" HorizontalAlignment="Left" Margin="50,178,0,0" Name="lblMainWelcome" VerticalAlignment="Top" Width="441" FontWeight="Bold" FontSize="35" />
     </Grid>
