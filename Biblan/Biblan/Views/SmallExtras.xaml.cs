@@ -33,7 +33,8 @@ namespace Biblan.Views
 
         private void btnMoreThanOneBook_Click(object sender, RoutedEventArgs e)
         {
-
+            lvSmallExtrasBooks.Visibility = Visibility.Hidden;
+            lvSmallExtrasCustomers.Visibility = Visibility.Visible;
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
