@@ -180,3 +180,19 @@ AS
 		AND CopyID = @copyID
 		AND BDate = @bdate
 	end
+
+-- Create Function Dino 20101105
+CREATE FUNCTION get_last_book_borrowed()
+RETURNS TABLE
+AS RETURN (
+	SELECT *
+	FROM Book
+	WHERE ISBN =
+	(SELECT ISBN
+		FROM(
+		SELECT ISBN, CopyID, CustomerID, BDate,
+		row_no = row_number() OVER (ORDER BY BDate DESC)
+        FROM Borrow
+	) d
+	WHERE  row_no = 1)
+)
