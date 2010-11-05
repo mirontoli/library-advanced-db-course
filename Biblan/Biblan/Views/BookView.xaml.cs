@@ -19,13 +19,13 @@ namespace Biblan.Views
     /// <summary>
     /// Interaction logic for BindingSpike.xaml
     /// </summary>
-    public partial class BindingSpike : Window
+    public partial class BookView : Window
     {
         GridViewColumnHeader _lastHeaderClicked = null;
         ListSortDirection _lastDirection = ListSortDirection.Ascending;
 
         private Controller.Controller controller = Controller.Controller.GetInstance();
-        public BindingSpike()
+        public BookView()
         {
             InitializeComponent();
             TestBind();

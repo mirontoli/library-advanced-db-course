@@ -32,7 +32,7 @@ namespace Biblan.Views
 
         private void btnSpike_Click(object sender, RoutedEventArgs e)
         {
-            BindingSpike bs = new BindingSpike();
+            BookView bs = new BookView();
             bs.Show();
         }
 
