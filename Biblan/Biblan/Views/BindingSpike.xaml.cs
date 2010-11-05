@@ -81,10 +81,30 @@ namespace Biblan.Views
 
         private void tbFilter_KeyUp(object sender, KeyEventArgs e)
         {
+            // http://svetoslavsavov.blogspot.com/2009/09/sorting-and-filtering-databound.html
             if (e.Key == Key.Enter)
             {
-                MessageBox.Show("you pressed Enter");
+                //MessageBox.Show("you pressed Enter");
+                // Get the default view from the listview
+                ICollectionView view = CollectionViewSource.GetDefaultView(lvBinding.ItemsSource);
+
+                view.Filter = null;
+                view.Filter = new Predicate<object>(FilterBooks);
             }
         }
+        private bool FilterBooks(object obj)
+        {
+            Book book = obj as Book;
+            if (book == null) return false;
+
+            string textFilter = tbFilter.Text;
+
+            if (textFilter.Trim().Length == 0) return true; // the filter is empty - pass all items
+
+            // apply the filter
+            if (book.Title.ToLower().Contains(textFilter.ToLower())) return true;
+            return false;
+        }
+
     }
 }

@@ -1,17 +1,18 @@
 ﻿<Window x:Class="Biblan.Views.BindingSpike"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="BindingSpike" Height="314" Width="459" ResizeMode="NoResize">
-    <Grid Height="213">
+        Title="BindingSpike" ResizeMode="NoResize" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="487" Width="459">
+    <Grid Height="413">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="88*" />
             <ColumnDefinition Width="24*" />
             <ColumnDefinition Width="70*" />
             <ColumnDefinition Width="28*" />
-            <ColumnDefinition Width="102*" />
+            <ColumnDefinition Width="62*" />
+            <ColumnDefinition Width="40*" />
             <ColumnDefinition Width="125*" />
         </Grid.ColumnDefinitions>
-        <ListView Height="237" 
+        <ListView Height="201" 
                   HorizontalAlignment="Left" 
                   Margin="12,12,0,0" 
                   Name="lvBinding" 
@@ -20,7 +21,7 @@
                   ItemsSource="{Binding}" 
                   IsEnabled="True" 
                   DataContext="{Binding}"
-                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" Grid.ColumnSpan="6">
+                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" Grid.ColumnSpan="7">
              <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ISBN" Width="100" DisplayMemberBinding="{Binding Path=ISBN}"/>
@@ -30,6 +31,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox Grid.Column="4" Height="23" HorizontalAlignment="Left" Margin="84,-32,0,0" Name="tbFilter" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Text="Filter" KeyUp="tbFilter_KeyUp" />
+        <TextBox Grid.Column="5" Height="23" HorizontalAlignment="Left" Margin="22,-32,0,0" Name="tbFilter" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Text="Filter" KeyUp="tbFilter_KeyUp" />
+        <Button Content="Button" Grid.Column="6" Height="23" HorizontalAlignment="Left" Margin="10,294,0,0" Name="btnAddBook" VerticalAlignment="Top" Width="75" />
+        <Button Content="Button" Grid.Column="4" Height="23" HorizontalAlignment="Left" Margin="2,300,0,0" Name="btnChangeBook" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" />
     </Grid>
 </Window>
