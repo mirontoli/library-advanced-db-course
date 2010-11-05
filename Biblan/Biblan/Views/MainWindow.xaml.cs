@@ -40,5 +40,10 @@ namespace Biblan.Views
         {
             Controller.Controller.GetInstance().ShowSmallExtrasWindow();
         }
+
+        private void btnCustomers_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.Controller.GetInstance().ShowCustomerViewWindow();
+        }
     } 
 }

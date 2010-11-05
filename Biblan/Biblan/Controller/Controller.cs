@@ -163,5 +163,10 @@ namespace Biblan.Controller
             SmallExtras sx = new SmallExtras();
             sx.Show();
         }
+
+        internal void ShowCustomerViewWindow()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
