@@ -37,5 +37,10 @@ namespace Biblan.Views
         {
 
         }
+
+        private void btnCancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
