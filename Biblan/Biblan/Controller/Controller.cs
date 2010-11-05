@@ -50,6 +50,36 @@ namespace Biblan.Controller
             List<Book> books = query.ToList();
             return books;
         }
+        public List<Book> GetAllBooksThatBeginsWithA()
+        {
+            var query = from c in dataContext.search_books_with_a_title_that_begins_with_A()
+                        select new Book
+                        {
+                            Title = c.Title,
+                            NumberOfPages = (int)c.NumberOfPages,
+                            Publisher = c.Publisher,
+                            ISBN = c.ISBN,
+                            Author = c.Author
+                        };
+
+            List<Book> books = query.ToList();
+            return books;
+        }
+        public List<Book> GetAllBooksThatAreOlderThan15Years()
+        {
+            var query = from c in dataContext.search_book_print_year()
+                        select new Book
+                        {
+                            Title = c.Title,
+                            NumberOfPages = (int)c.NumberOfPages,
+                            Publisher = c.Publisher,
+                            ISBN = c.ISBN,
+                            Author = c.Author
+                        };
+
+            List<Book> books = query.ToList();
+            return books;
+        }
         #region gamla tester
         //private void AddBook()
         //{
