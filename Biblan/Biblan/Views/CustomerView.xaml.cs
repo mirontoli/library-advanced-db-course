@@ -23,22 +23,22 @@ namespace Biblan.Views
             InitializeComponent();
         }
 
-        private void btnChange(object sender, RoutedEventArgs e)
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnDelete(object sender, RoutedEventArgs e)
+        private void btnChange_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnAdd(object sender, RoutedEventArgs e)
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnCancel(object sender, RoutedEventArgs e)
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
