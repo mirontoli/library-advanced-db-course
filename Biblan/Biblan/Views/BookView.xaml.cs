@@ -16,9 +16,6 @@ using System.ComponentModel;
 
 namespace Biblan.Views
 {
-    /// <summary>
-    /// Interaction logic for BindingSpike.xaml
-    /// </summary>
     public partial class BookView : Window
     {
         GridViewColumnHeader _lastHeaderClicked = null;
@@ -84,7 +81,6 @@ namespace Biblan.Views
             // http://svetoslavsavov.blogspot.com/2009/09/sorting-and-filtering-databound.html
             if (e.Key == Key.Enter)
             {
-                //MessageBox.Show("you pressed Enter");
                 // Get the default view from the listview
                 ICollectionView view = CollectionViewSource.GetDefaultView(lvBinding.ItemsSource);
 
