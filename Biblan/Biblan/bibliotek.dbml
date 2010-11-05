@@ -84,4 +84,9 @@
       <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.search_customers_with_more_than_one_book" Method="search_customers_with_more_than_one_book" IsComposable="true">
+    <ElementType Name="search_customers_with_more_than_one_bookResult">
+      <Column Name="NumberOf" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

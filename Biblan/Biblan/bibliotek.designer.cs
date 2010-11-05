@@ -126,6 +126,12 @@ namespace Biblan
 		{
 			return this.CreateMethodCallQuery<get_last_book_borrowedResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.search_customers_with_more_than_one_book", IsComposable=true)]
+		public IQueryable<search_customers_with_more_than_one_bookResult> search_customers_with_more_than_one_book()
+		{
+			return this.CreateMethodCallQuery<search_customers_with_more_than_one_bookResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
 	}
 	
 	public partial class search_books_titlesResult
@@ -703,6 +709,32 @@ namespace Biblan
 				if ((this._Author != value))
 				{
 					this._Author = value;
+				}
+			}
+		}
+	}
+	
+	public partial class search_customers_with_more_than_one_bookResult
+	{
+		
+		private System.Nullable<int> _NumberOf;
+		
+		public search_customers_with_more_than_one_bookResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOf", DbType="Int")]
+		public System.Nullable<int> NumberOf
+		{
+			get
+			{
+				return this._NumberOf;
+			}
+			set
+			{
+				if ((this._NumberOf != value))
+				{
+					this._NumberOf = value;
 				}
 			}
 		}
