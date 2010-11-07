@@ -10,6 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Biblan.Model;
+using Biblan.Controller;
+using System.ComponentModel;
 
 namespace Biblan.Views
 {
@@ -42,5 +45,15 @@ namespace Biblan.Views
         {
             Controller.Controller.GetInstance().ShowAddCustomerWindow();
         }
+/*
+        public void addDetails(CustomerView details)
+        {
+            CustomerView.put(details.getCustomerID(), details);
+            CustomerView.put(details.getName(), details);
+            CustomerView.put(details.getAdress(), details);
+            CustomerView.put(details.getPhone(), details);
+            //numberOfEntries++;
+        }
+        */
     }
 }
