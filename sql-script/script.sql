@@ -97,6 +97,16 @@ AS RETURN (
 	WHERE Title LIKE 'A' + '%'
 )
 
+CREATE FUNCTION search_customers_with_more_than_one_book()
+RETURNS TABLE
+AS RETURN (
+		SELECT COUNT(b.CustomerID) AS NumberOf
+		FROM Borrow b, Customer c
+		WHERE b.CustomerID = c.CustomerID
+		GROUP BY b.CustomerID
+		HAVING COUNT(b.CustomerID) > 1
+)
+
 
 -- Create procedures Anatoly 20101026
 CREATE PROCEDURE usp_add_book
