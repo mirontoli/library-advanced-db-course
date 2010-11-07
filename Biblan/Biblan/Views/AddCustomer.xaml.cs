@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace Biblan.Views
 {
     /// <summary>
-    /// Interaction logic for CustomerView.xaml
+    /// Interaction logic for AddCustomer.xaml
     /// </summary>
-    public partial class CustomerView : Window
+    public partial class AddCustomer : Window
     {
-        public CustomerView()
+        public AddCustomer()
         {
             InitializeComponent();
         }
@@ -26,21 +26,6 @@ namespace Biblan.Views
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void btnChange_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            Controller.Controller.GetInstance().ShowAddCustomerWindow();
         }
     }
 }

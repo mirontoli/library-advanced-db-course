@@ -178,10 +178,17 @@ namespace Biblan.Controller
             sx.Show();
         }
 
-        internal void ShowCustomerViewWindow()
+        public void ShowCustomerViewWindow()
         {
             CustomerView cv = new CustomerView();
             cv.Show();
+        }
+
+        public void ShowAddCustomerWindow()
+        {
+            AddCustomer ac = new AddCustomer();
+            ac.Show();
+
         }
     }
 }
