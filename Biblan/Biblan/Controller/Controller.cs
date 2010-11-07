@@ -81,7 +81,7 @@ namespace Biblan.Controller
             return books;
         }
 
-        public List<Book> GetLatestBookBorrowed()
+        public List<Book> GetLatestBookBorrowed() // ska inte returnera en lista utan enbart en bok
         {
             var query = from c in dataContext.get_last_book_borrowed()
                         select new Book
@@ -96,6 +96,20 @@ namespace Biblan.Controller
             List<Book> books = query.ToList();
             return books;
         }
+        /*public List<Customer> GetCustomersWithMoreThanOneBook()
+        {
+            var query = from c in dataContext.search_customers_with_more_than_one_book()
+                        select new Customer
+                        {
+                            CustomerID = c.CustomerID, //finns inte
+                            Name = c.Name, //finns inte
+                            Address = c.Address, //finns inte
+                            Phone = c.Phone, //finns inte
+                        };
+
+            List<Customer> customer = query.ToList();
+            return customer;
+        }*/
 
         #region gamla tester
         //private void AddBook()
