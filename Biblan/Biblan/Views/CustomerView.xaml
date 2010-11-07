@@ -4,9 +4,9 @@
         Title="Customers" Height="340" Width="496">
     <Grid>
         <ListView Height="250" HorizontalAlignment="Left" Name="lvCustomer" VerticalAlignment="Top" Width="483" />
-        <Button Content="Add" Height="25" HorizontalAlignment="Left" Margin="0,264,0,0" Name="button1" VerticalAlignment="Top" Width="90" Click="btnAdd_Click" />
+        <Button Content="Add" Height="25" HorizontalAlignment="Left" Margin="12,264,0,0" Name="button1" VerticalAlignment="Top" Width="90" Click="btnAdd_Click" />
         <Button Content="Delete" Height="25" HorizontalAlignment="Right" Margin="0,264,130,0" Name="button2" VerticalAlignment="Top" Width="90" Click="btnDelete_Click" />
-        <Button Content="Change" Height="25" HorizontalAlignment="Right" Margin="0,264,259,0" Name="button3" VerticalAlignment="Top" Width="90" Click="btnChange_Click" />
-        <Button Content="Cancel" Height="25" HorizontalAlignment="Right" Margin="0,264,0,0" Name="button4" VerticalAlignment="Top" Width="90" Click="btnCancel_Click" />
+        <Button Content="Change" Height="25" HorizontalAlignment="Right" Margin="0,264,252,0" Name="button3" VerticalAlignment="Top" Width="90" Click="btnChange_Click" />
+        <Button Content="Cancel" Height="25" HorizontalAlignment="Right" Margin="0,264,12,0" Name="button4" VerticalAlignment="Top" Width="90" Click="btnCancel_Click" />
     </Grid>
 </Window>
