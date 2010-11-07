@@ -11,8 +11,8 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ISBN" Width="100" DisplayMemberBinding="{Binding Path=ISBN}"/>
-                    <GridViewColumn Header="Title" Width="100" DisplayMemberBinding="{Binding Path=Title}"/>
-                    <GridViewColumn Header="Publisher" Width="100" DisplayMemberBinding="{Binding Path=Publisher}"/>
+                    <GridViewColumn Header="Title" Width="128" DisplayMemberBinding="{Binding Path=Title}"/>
+                    <GridViewColumn Header="Publisher" Width="125" DisplayMemberBinding="{Binding Path=Publisher}"/>
                     <GridViewColumn Header="Author" Width="100" DisplayMemberBinding="{Binding Path=Author}"/>
                 </GridView>
             </ListView.View>
