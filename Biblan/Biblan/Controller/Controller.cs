@@ -12,6 +12,7 @@ namespace Biblan.Controller
         private static Controller controllerSingleton;
         bibliotekDataContext dataContext = new bibliotekDataContext();
         // private in order to disable instantiating
+
         private Controller()
         {
         }
