@@ -43,7 +43,8 @@ namespace Biblan.Views
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
             controller.CustomerView = this;
-            controller.ShowChangeCustomerWindow();
+            Model.Customer customer = GetSelectedCustomer();
+            controller.ShowChangeCustomerWindow(customer);
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -55,6 +56,11 @@ namespace Biblan.Views
         {
             controller.CustomerView = this;
             controller.ShowAddCustomerWindow();
+        }
+        private Customer GetSelectedCustomer()
+        {
+            Customer customer = lvCustomer.SelectedItem as Customer;
+            return customer;
         }
     }
 }

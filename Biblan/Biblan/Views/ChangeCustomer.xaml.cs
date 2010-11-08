@@ -21,7 +21,20 @@ namespace Biblan.Views
     /// </summary>
     public partial class ChangeCustomer : Window
     {
-        Controller.Controller controller = Controller.Controller.GetInstance();
+        private Controller.Controller controller = Controller.Controller.GetInstance();
+        private Model.Customer customer;
+        public Model.Customer CustomerToChange
+        {
+            get { return customer; }
+            set 
+            { 
+                customer = value;
+                txtBoxCustomerID.Text = customer.CustomerID.ToString();
+                txtBoxName.Text = customer.Name;
+                txtBoxAddress.Text = customer.Address;
+                txtBoxPhone.Text = customer.Phone;
+            }
+        }
 
         public ChangeCustomer()
         {

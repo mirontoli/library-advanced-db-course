@@ -269,10 +269,12 @@ namespace Biblan.Controller
             copies = query.ToList<BookCopy>();
             return copies;
         }
-        public void ShowChangeCustomerWindow()
+        public void ShowChangeCustomerWindow(Customer customer)
         {
             ChangeCustomer cc = new ChangeCustomer();
+            cc.CustomerToChange = customer;
             cc.Show();
+            
         }
 
         public void ShowDeleteCustomerWindow()
