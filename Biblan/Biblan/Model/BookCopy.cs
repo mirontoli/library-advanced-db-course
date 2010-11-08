@@ -27,5 +27,15 @@ namespace Biblan.Model
             get;
             set;
         }
+        /// <summary>
+        /// Default we don't load the history while retrieving 
+        /// from database 
+        /// but if we need, we map history to this Property
+        /// </summary>
+        public List<Borrowing> PreviousBorrowings
+        {
+            get;
+            set;
+        }
     }
 }

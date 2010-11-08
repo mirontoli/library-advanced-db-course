@@ -7,11 +7,6 @@ namespace Biblan.Model
 {
     public class Borrowing
     {
-        public string ISBN
-        {
-            get;
-            set;
-        }
 
         public int CustomerID
         {
@@ -19,17 +14,23 @@ namespace Biblan.Model
             set;
         }
 
-        public int CopyID
+        public BookCopy BookCopy
         {
             get;
             set;
         }
 
-        public int BDate
+        public DateTime BorrowDate
         {
             get;
             set;
         }
+        public DateTime ReturnDate
+        {
+            get;
+            set;
+        }
+
 
 
     }
