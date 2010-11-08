@@ -212,7 +212,7 @@ namespace Biblan.Controller
             ab.Show();
         }
 
-        internal List<BookCopy> getCopies(Book book)
+        public List<BookCopy> getCopies(Book book)
         {
             List<BookCopy> copies = null;
             var query = from c in dataContext.get_copies_for_a_book(book.ISBN)
