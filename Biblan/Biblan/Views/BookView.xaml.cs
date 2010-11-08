@@ -115,7 +115,7 @@ namespace Biblan.Views
                 cbCopies.IsEnabled = true;
                 btnAddCopy.IsEnabled = true;
                 cbCopies.ItemsSource = null;
-                cbCopies.ItemsSource = controller.getCopies(book);
+                cbCopies.ItemsSource = controller.GetAvailableCopies(book);
             }
         }
 

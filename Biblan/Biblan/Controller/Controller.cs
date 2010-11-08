@@ -223,7 +223,17 @@ namespace Biblan.Controller
             copies = query.ToList<BookCopy>();
             return copies;
         }
-        
+        public List<BookCopy> GetAvailableCopies(Book book)
+        {
+            List<BookCopy> copies = null;
+            var query = from c in dataContext.get_available_copies_for_a_book(book.ISBN)
+                        select new BookCopy
+                        {
+                            CopyID = c.CopyID
+                        };
+            copies = query.ToList<BookCopy>();
+            return copies;
+        }
         public void ShowChangeCustomerWindow()
         {
             ChangeCustomer cc = new ChangeCustomer();
