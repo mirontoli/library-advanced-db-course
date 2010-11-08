@@ -18,9 +18,17 @@ namespace Biblan.Views
     /// </summary>
     public partial class BorrowingView : Window
     {
+        Controller.Controller controller = Controller.Controller.GetInstance();
+
         public BorrowingView()
         {
             InitializeComponent();
+            TestBorrowings();
+        }
+
+        private void TestBorrowings()
+        {
+            lvBorrowing.ItemsSource = controller.GetAllBooks();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

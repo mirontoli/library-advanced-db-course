@@ -177,6 +177,12 @@ namespace Biblan
 		{
 			return this.CreateMethodCallQuery<get_all_customersResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.get_all_borrows", IsComposable=true)]
+		public IQueryable<get_all_borrowsResult> get_all_borrows()
+		{
+			return this.CreateMethodCallQuery<get_all_borrowsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
 	}
 	
 	public partial class get_available_copies_for_a_bookResult
@@ -1064,6 +1070,68 @@ namespace Biblan
 				if ((this._Phone != value))
 				{
 					this._Phone = value;
+				}
+			}
+		}
+	}
+	
+	public partial class get_all_borrowsResult
+	{
+		
+		private string _ISBN;
+		
+		private int _CustomerID;
+		
+		private int _CopyID;
+		
+		public get_all_borrowsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(35) NOT NULL", CanBeNull=false)]
+		public string ISBN
+		{
+			get
+			{
+				return this._ISBN;
+			}
+			set
+			{
+				if ((this._ISBN != value))
+				{
+					this._ISBN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="Int NOT NULL")]
+		public int CustomerID
+		{
+			get
+			{
+				return this._CustomerID;
+			}
+			set
+			{
+				if ((this._CustomerID != value))
+				{
+					this._CustomerID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CopyID", DbType="Int NOT NULL")]
+		public int CopyID
+		{
+			get
+			{
+				return this._CopyID;
+			}
+			set
+			{
+				if ((this._CopyID != value))
+				{
+					this._CopyID = value;
 				}
 			}
 		}

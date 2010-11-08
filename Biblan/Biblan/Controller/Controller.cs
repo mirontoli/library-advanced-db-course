@@ -25,6 +25,36 @@ namespace Biblan.Controller
             }
             return controllerSingleton;
         }
+        public List<Borrowing> GetAllBorrowings()
+        {
+            var query = from c in dataContext.get_all_borrows()
+                        select new 
+                        {
+                            ISBN = c.ISBN,
+                            CopyID = c.CopyID,
+                            CustomerID = c.CustomerID
+                        };
+            List<Borrowing> borrowings = null;
+            foreach (var item in query)
+            {
+                Book book = new Book();
+                book.ISBN = item.ISBN;
+
+                BookCopy bc = new BookCopy();
+                bc.Book = book;
+
+                Customer cust = new Customer();
+                cust.CustomerID = item.CustomerID;
+
+                Borrowing b = new Borrowing();
+                b.BookCopy = bc;
+                b.Customer = cust;
+
+                borrowings.Add(b);           
+            }
+            return borrowings;
+
+        }
         public List<Book> GetAllBooks()
         {
             var query = from c in dataContext.search_books_titles("")

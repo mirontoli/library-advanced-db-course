@@ -8,7 +8,7 @@ namespace Biblan.Model
     public class Borrowing
     {
 
-        public int CustomerID
+        public Customer Customer
         {
             get;
             set;
