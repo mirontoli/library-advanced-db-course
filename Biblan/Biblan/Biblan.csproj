@@ -117,7 +117,6 @@
     <Compile Include="Model\Borrowing.cs" />
     <Compile Include="Model\Copy.cs" />
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\Reserv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
