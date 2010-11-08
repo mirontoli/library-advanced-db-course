@@ -18,6 +18,8 @@ namespace Biblan.Views
     /// </summary>
     public partial class addBook : Window
     {
+        Controller.Controller controller = Controller.Controller.GetInstance();
+
         public addBook()
         {
             InitializeComponent();
@@ -30,7 +32,16 @@ namespace Biblan.Views
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            string ISBN = txtISBN.Text;
+            string title = tbTitel.Text;
+            string author = tbAuthor.Text;
+            string publisher = tbPublisher.Text;
+            string stringpages = tbPages.Text;
+            int pages = Convert.ToInt32(stringpages);
+            string stringyear = tbYear.Text;
+            int year = Convert.ToInt32(stringyear);
+            controller.AddBook(ISBN, title, pages, year, author, publisher);
+            this.Close();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

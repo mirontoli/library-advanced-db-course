@@ -224,6 +224,32 @@ AS RETURN (
         FROM Borrow
 	) d
 	WHERE  row_no = 1)
+<<<<<<< .mine
+)
+
+--create function Dino 20101108
+
+CREATE FUNCTION get_all_customers()
+RETURNS TABLE
+AS RETURN (
+	SELECT *
+	FROM Customer
+)
+
+-- create procedure Dino 20101108
+CREATE PROCEDURE usp_delete_customer
+@customerID INT
+AS
+	begin
+		IF NOT EXISTS(SELECT CustomerID FROM Customer WHERE CustomerID = @customerID)
+			BEGIN 
+				RAISERROR('The customer you are trying to delete does not exist!', 11, 1)
+			END
+		ELSE
+			BEGIN
+				DELETE FROM Customer WHERE CustomerID = @customerID
+			END
+	end=======
 )
 
 ALTER FUNCTION get_all_borrows()
@@ -231,4 +257,4 @@ RETURNS TABLE
 AS RETURN (
 	SELECT ISBN, CustomerID, CopyID
 	FROM Borrow
-)
+)>>>>>>> .r176

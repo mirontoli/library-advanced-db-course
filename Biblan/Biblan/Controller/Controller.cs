@@ -324,5 +324,10 @@ namespace Biblan.Controller
             List<Customer> customers = query.ToList();
             return customers;
         }
+
+        internal void AddBook(string ISBN, string title, int pages, int year, string author, string publisher)
+        {
+            dataContext.usp_add_book(ISBN, title, pages, year, author, publisher);
+        }
     }
 }
