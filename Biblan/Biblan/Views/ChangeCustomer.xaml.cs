@@ -21,6 +21,8 @@ namespace Biblan.Views
     /// </summary>
     public partial class ChangeCustomer : Window
     {
+        Controller.Controller controller = Controller.Controller.GetInstance();
+
         public ChangeCustomer()
         {
             InitializeComponent();
@@ -28,6 +30,17 @@ namespace Biblan.Views
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            string CustID = txtBoxCustomerID.Text;
+            int CID = Convert.ToInt32(CustID);
+            string name = txtBoxName.Text;
+            string address = txtBoxAddress.Text;
+            string phone = txtBoxPhone.Text;
+            controller.ChangeCustomer(CID, name, address, phone);
             this.Close();
         }
     }

@@ -252,5 +252,10 @@ namespace Biblan.Controller
             view.BookToBorrow = book;
             view.Show();
         }
+
+        internal void ChangeCustomer(int CID, string name, string address, string phone)
+        {
+            dataContext.usp_update_customer(CID, name, address, phone);
+        }
     }
 }
