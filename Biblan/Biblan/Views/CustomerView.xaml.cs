@@ -53,6 +53,5 @@ namespace Biblan.Views
         {
             Controller.Controller.GetInstance().ShowAddCustomerWindow();
         }
-
     }
 }

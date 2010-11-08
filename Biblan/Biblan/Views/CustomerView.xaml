@@ -4,7 +4,16 @@
         Title="Customers" Height="340" Width="496">
     <Grid>
         <ListView Height="250" HorizontalAlignment="Left" Name="lvCustomer" VerticalAlignment="Top" Width="474" ItemsSource="{Binding}" 
-                  IsEnabled="True" DataContext="{Binding}" />
+                  IsEnabled="True" DataContext="{Binding}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Customer ID" Width="100" DisplayMemberBinding="{Binding Path=CustomerID}"/>
+                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Path=Name}"/>
+                    <GridViewColumn Header="Address" Width="100" DisplayMemberBinding="{Binding Path=Address}"/>
+                    <GridViewColumn Header="Phone" Width="100" DisplayMemberBinding="{Binding Path=Phone}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button Content="Add" Height="25" HorizontalAlignment="Left" Margin="12,264,0,0" Name="button1" VerticalAlignment="Top" Width="90" Click="btnAdd_Click" />
         <Button Content="Delete" Height="25" HorizontalAlignment="Right" Margin="0,264,130,0" Name="button2" VerticalAlignment="Top" Width="90" Click="btnDelete_Click" />
         <Button Content="Change" Height="25" HorizontalAlignment="Right" Margin="0,264,252,0" Name="button3" VerticalAlignment="Top" Width="90" Click="btnChange_Click" />
