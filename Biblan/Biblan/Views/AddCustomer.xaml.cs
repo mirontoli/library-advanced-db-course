@@ -18,7 +18,7 @@ namespace Biblan.Views
     /// </summary>
     public partial class AddCustomer : Window
     {
-        Controller.Controller controller = Controller.Controller.GetInstance();
+        private Controller.Controller controller = Controller.Controller.GetInstance();
 
         public AddCustomer()
         {
@@ -32,12 +32,10 @@ namespace Biblan.Views
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            string CustID = txtBoxCustomerID.Text;
-            int CID = Convert.ToInt32(CustID);
             string name = txtBoxName.Text;
             string address = txtBoxAddress.Text;
             string phone = txtBoxPhone.Text;
-            controller.AddCustomer(CID, name, address, phone);
+            controller.AddCustomer(name, address, phone);
             this.Close();
         }
     }

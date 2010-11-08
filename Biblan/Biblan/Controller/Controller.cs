@@ -143,9 +143,9 @@ namespace Biblan.Controller
             return books;
         }
 
-        public void AddCustomer(int customerID, string name, string address, string phone)
+        public void AddCustomer(string name, string address, string phone)
         {
-            dataContext.usp_add_customer(customerID, name, address, phone);
+            dataContext.usp_add_customer(name, address, phone);
         }
 
         public List<Customer> GetCustomersWithMoreThanOneBook()

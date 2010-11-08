@@ -20,13 +20,6 @@
     <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.usp_add_customer" Method="usp_add_customer">
-    <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="address" Type="System.String" DbType="VarChar(75)" />
-    <Parameter Name="phone" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.usp_delete_customer" Method="usp_delete_customer">
     <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
@@ -140,6 +133,12 @@
     <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
     <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
     <Parameter Name="copyID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_add_customer" Method="usp_add_customer">
+    <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="address" Type="System.String" DbType="VarChar(75)" />
+    <Parameter Name="phone" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
