@@ -201,16 +201,14 @@ AS
 CREATE PROCEDURE usp_return_book
 @isbn VARCHAR(35),
 @customerID VARCHAR(75),
-@copyID INT,
-@bdate DATETIME
+@copyID INT
 AS
 	begin
 		DELETE FROM Borrow
 		WHERE ISBN = @isbn
 		AND CustomerID = @customerID
 		AND CopyID = @copyID
-		AND BDate = @bdate
-	end
+	end	
 
 -- Create Function Dino 20101105
 CREATE FUNCTION get_last_book_borrowed()
@@ -226,4 +224,11 @@ AS RETURN (
         FROM Borrow
 	) d
 	WHERE  row_no = 1)
+)
+
+ALTER FUNCTION get_all_borrows()
+RETURNS TABLE
+AS RETURN (
+	SELECT ISBN, CustomerID, CopyID
+	FROM Borrow
 )
