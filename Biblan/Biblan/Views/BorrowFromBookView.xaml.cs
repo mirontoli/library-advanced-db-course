@@ -45,6 +45,7 @@ namespace Biblan.Views
             Model.Customer customer = GetSelectedCustomer();
             controller.Borrow(BookCopyToBorrow, customer);
             btnBorrow.IsEnabled = false;
+            this.Close();
         }
 
         private Model.Customer GetSelectedCustomer()
