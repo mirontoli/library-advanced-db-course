@@ -10,7 +10,8 @@ namespace Biblan.Controller
     public class Controller
     {
         private static Controller controllerSingleton;
-        bibliotekDataContext dataContext = new bibliotekDataContext();
+        //bibliotekDataContext dataContext = new bibliotekDataContext();
+        BibAnotherChanceDataContext dataContext = new BibAnotherChanceDataContext();
         // private in order to disable instantiating
 
         private Controller()

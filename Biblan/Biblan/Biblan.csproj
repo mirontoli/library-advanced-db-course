@@ -64,6 +64,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BibAnotherChance.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibAnotherChance.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Model\BookCopy.cs" />
     <Compile Include="Views\addBook.xaml.cs">
       <DependentUpon>addBook.xaml</DependentUpon>
@@ -165,8 +170,16 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="app.config" />
+    <None Include="BibAnotherChance.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BibAnotherChance.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Model\bibliotek.dbml.layout">
       <DependentUpon>bibliotek.dbml</DependentUpon>
+    </None>
+    <None Include="BibAnotherChance.dbml.layout">
+      <DependentUpon>BibAnotherChance.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
