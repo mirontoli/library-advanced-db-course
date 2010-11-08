@@ -32,6 +32,7 @@ namespace Biblan.Views
         public void TestBind()
         {
             lvCustomer.ItemsSource = controller.GetAllCustomers();
+            lvCustomer.Items.Refresh();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
