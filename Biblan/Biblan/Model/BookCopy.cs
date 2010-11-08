@@ -12,7 +12,7 @@ namespace Biblan.Model
             get;
             set;
         }
-        public int CopyNumber
+        public int CopyID
         {
             get;
             set;
