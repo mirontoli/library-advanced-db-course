@@ -26,6 +26,7 @@ namespace Biblan.Views
         public BorrowFromBookView()
         {
             InitializeComponent();
+            lblBook.Content = BookToBorrow.Title;
         }
     }
 }

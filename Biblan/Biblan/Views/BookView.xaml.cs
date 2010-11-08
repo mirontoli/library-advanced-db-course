@@ -157,6 +157,8 @@ namespace Biblan.Views
         private void btnBorrow_Click(object sender, RoutedEventArgs e)
         {
             Book book = GetSelectedBook();
+            BookCopy bc = cbCopies.SelectedItem as BookCopy;
+            bc.Book = book;
             controller.ShowBorrowFromBookView(book);
         }
 
