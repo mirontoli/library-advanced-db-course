@@ -215,7 +215,6 @@ AS RETURN (
         FROM Borrow
 	) d
 	WHERE  row_no = 1)
-<<<<<<< .mine
 )
 
 --create function Dino 20101108
@@ -240,7 +239,7 @@ AS
 			BEGIN
 				DELETE FROM Customer WHERE CustomerID = @customerID
 			END
-	end=======
+	end
 )
 
 ALTER FUNCTION get_all_borrows()
@@ -248,4 +247,4 @@ RETURNS TABLE
 AS RETURN (
 	SELECT ISBN, CustomerID, CopyID
 	FROM Borrow
-)>>>>>>> .r176
+)
