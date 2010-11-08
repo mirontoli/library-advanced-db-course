@@ -341,5 +341,10 @@ namespace Biblan.Controller
             BookView bs = new BookView();
             bs.Show();
         }
+
+        public void Borrow(BookCopy BookCopyToBorrow, Customer customer)
+        {
+            dataContext.usp_borrow_book(BookCopyToBorrow.Book.ISBN, customer.CustomerID, BookCopyToBorrow.CopyID);
+        }
     }
 }

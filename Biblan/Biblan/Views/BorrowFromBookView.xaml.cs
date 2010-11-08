@@ -18,6 +18,7 @@ namespace Biblan.Views
     /// </summary>
     public partial class BorrowFromBookView : Window
     {
+        private Controller.Controller controller = Controller.Controller.GetInstance();
         public Model.BookCopy BookCopyToBorrow
         {
             get;
@@ -26,11 +27,30 @@ namespace Biblan.Views
         public BorrowFromBookView()
         {
             InitializeComponent();
+            lvCustomer.ItemsSource = controller.GetAllCustomers();
         }
 
         public void SetTitle()
         {
             lblBook.Content = BookCopyToBorrow.Book.Title;
+        }
+
+        private void lvCustomer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnBorrow.IsEnabled = true;
+        }
+
+        private void btnBorrow_Click(object sender, RoutedEventArgs e)
+        {
+            Model.Customer customer = GetSelectedCustomer();
+            controller.Borrow(BookCopyToBorrow, customer);
+            btnBorrow.IsEnabled = false;
+        }
+
+        private Model.Customer GetSelectedCustomer()
+        {
+            Model.Customer customer = lvCustomer.SelectedItem as Model.Customer;
+            return customer;
         }
     }
 }

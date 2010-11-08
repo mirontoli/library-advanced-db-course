@@ -49,7 +49,9 @@ namespace Biblan.Views
 
         private void btnBorrow_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("In order to borrow, open Books View.\r\nWant to open it now?", "Borrow? Go to Books View", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            string caption = "Borrow? Go to Books View";
+            string text = "In order to borrow, open Books View.\r\nWant to open it now?";
+            if (MessageBox.Show(text, caption, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 controller.ShowBookView();
             }

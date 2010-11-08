@@ -1,9 +1,20 @@
 ﻿<Window x:Class="Biblan.Views.BorrowFromBookView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="BorrowFromBookView" Height="300" Width="507">
+        Title="BorrowFromBookView" Height="434" Width="507">
     <Grid>
         <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="174,13,0,0" Name="lblBook" VerticalAlignment="Top" />
-        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="178,50,0,0" Name="lblInstruction" VerticalAlignment="Top" />
+        <Label Content="Choose your customer from the list" Height="28" HorizontalAlignment="Left" Margin="105,35,0,0" Name="lblInstruction" VerticalAlignment="Top" />
+        <ListView Height="235" HorizontalAlignment="Left" Margin="12,97,0,0" Name="lvCustomer" VerticalAlignment="Top" Width="461" SelectionMode="Single" SelectionChanged="lvCustomer_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Customer ID" Width="100" DisplayMemberBinding="{Binding Path=CustomerID}"/>
+                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Path=Name}"/>
+                    <GridViewColumn Header="Address" Width="100" DisplayMemberBinding="{Binding Path=Address}"/>
+                    <GridViewColumn Header="Phone" Width="100" DisplayMemberBinding="{Binding Path=Phone}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Borrow" Height="23" HorizontalAlignment="Left" Margin="192,363,0,0" Name="btnBorrow" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="btnBorrow_Click" />
     </Grid>
 </Window>

@@ -27,12 +27,6 @@
     <Parameter Name="phone" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.usp_borrow_book" Method="usp_borrow_book">
-    <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
-    <Parameter Name="customerID" Type="System.String" DbType="VarChar(75)" />
-    <Parameter Name="copyID" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.usp_delete_customer" Method="usp_delete_customer">
     <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
@@ -137,6 +131,12 @@
     </ElementType>
   </Function>
   <Function Name="dbo.usp_return_book" Method="usp_return_book">
+    <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
+    <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="copyID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.usp_borrow_book" Method="usp_borrow_book">
     <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
     <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
     <Parameter Name="copyID" Type="System.Int32" DbType="Int" />
