@@ -215,5 +215,10 @@ namespace Biblan.Controller
             copies = query.ToList<BookCopy>();
             return copies;
         }
+
+        internal void AddBookCopy(Book book)
+        {
+            dataContext.usp_add_copy(book.ISBN);
+        }
     }
 }

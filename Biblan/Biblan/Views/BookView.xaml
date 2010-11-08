@@ -32,6 +32,6 @@
             SelectedValuePath="CopyID" 
             SelectedValue="{Binding Path=CopyID}">
         </ComboBox>
-        <Button Content="Add a new copy" Height="23" HorizontalAlignment="Left" Margin="260,238,0,0" Name="btnAddCopy" VerticalAlignment="Top" Width="114" IsEnabled="False" />
+        <Button Content="Add a new copy" Height="23" HorizontalAlignment="Left" Margin="260,238,0,0" Name="btnAddCopy" VerticalAlignment="Top" Width="114" IsEnabled="False" Click="btnAddCopy_Click" />
     </Grid>
 </Window>
