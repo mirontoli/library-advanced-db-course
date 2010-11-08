@@ -82,7 +82,17 @@ AS RETURN (
 	and c.CopyID = b.CopyID
 	where c.ISBN = @isbn
 )
-
+-- Anatoly 20101108
+CREATE FUNCTION get_available_copies_for_a_book(@isbn VARCHAR(35))
+RETURNS TABLE
+AS RETURN (
+	select c.ISBN, c.CopyID
+	from Copy c left outer join Borrow b
+	ON c.ISBN = b.ISBN
+	and c.CopyID = b.CopyID
+	where c.ISBN = @isbn
+	and b.CustomerID IS NULL
+)
 -- Create functions Pontus 20101028
 CREATE FUNCTION search_number_of_book_pages()
 RETURNS TABLE
