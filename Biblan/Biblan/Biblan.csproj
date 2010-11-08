@@ -130,11 +130,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\bibliotek.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bibliotek.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Controller\controller.cs" />
     <Compile Include="Views\BookView.xaml.cs">
       <DependentUpon>BookView.xaml</DependentUpon>
@@ -175,9 +170,6 @@
       <LastGenOutput>BibAnotherChance.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Model\bibliotek.dbml.layout">
-      <DependentUpon>bibliotek.dbml</DependentUpon>
-    </None>
     <None Include="BibAnotherChance.dbml.layout">
       <DependentUpon>BibAnotherChance.dbml</DependentUpon>
     </None>
@@ -185,11 +177,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Model\bibliotek.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>bibliotek.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
