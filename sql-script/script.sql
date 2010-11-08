@@ -182,11 +182,11 @@ FROM deleted
 -- Create Procedures Dino 20101104
 CREATE PROCEDURE usp_borrow_book
 @isbn VARCHAR(35),
-@customerID VARCHAR(75),
+@customerID INT,
 @copyID INT
 AS
 	begin
-		INSERT INTO Borrow values(@isbn, @customerID, @copyID)
+		INSERT INTO Borrow(ISBN, CustomerID, CopyID) values(@isbn, @customerID, @copyID)
 	end
 
 CREATE PROCEDURE usp_return_book
