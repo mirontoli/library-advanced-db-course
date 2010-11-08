@@ -5,7 +5,7 @@
     <Grid>
         <ListView Height="301" HorizontalAlignment="Left" Name="listViewChangeCustomer" VerticalAlignment="Top" Width="474" />
         <Button Content="OK" Height="23" HorizontalAlignment="Left" Margin="289,266,0,0" Name="btnOK" VerticalAlignment="Top" Width="75" />
-        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="387,266,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="387,266,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="30,28,0,0" Name="txtCustomerID" Text="CustomerID:" VerticalAlignment="Top" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,28,0,0" Name="txtBoxCustomerID" VerticalAlignment="Top" Width="301" Text="" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="133,75,0,0" Name="txtBoxName" VerticalAlignment="Top" Width="301" Text="" />

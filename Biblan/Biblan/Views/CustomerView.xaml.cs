@@ -33,12 +33,12 @@ namespace Biblan.Views
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-
+            Controller.Controller.GetInstance().ShowChangeCustomerWindow();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            Controller.Controller.GetInstance().ShowDeleteCustomerWindow();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
