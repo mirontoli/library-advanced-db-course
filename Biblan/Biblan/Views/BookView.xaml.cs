@@ -149,5 +149,10 @@ namespace Biblan.Views
             this.Close();
         }
 
+        private void cbCopies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnBorrow.IsEnabled = true;
+        }
+
     }
 }
