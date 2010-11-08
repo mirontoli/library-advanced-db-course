@@ -241,9 +241,16 @@ namespace Biblan.Controller
             bv.Show();
         }
 
-        internal void AddBookCopy(Book book)
+        public void AddBookCopy(Book book)
         {
             dataContext.usp_add_copy(book.ISBN);
+        }
+
+        public void ShowBorrowFromBookView(Book book)
+        {
+            BorrowFromBookView view = new BorrowFromBookView();
+            view.BookToBorrow = book;
+            view.Show();
         }
     }
 }

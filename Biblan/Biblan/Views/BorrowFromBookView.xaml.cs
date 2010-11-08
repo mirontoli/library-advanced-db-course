@@ -18,6 +18,11 @@ namespace Biblan.Views
     /// </summary>
     public partial class BorrowFromBookView : Window
     {
+        public Model.Book BookToBorrow
+        {
+            get;
+            set;
+        }
         public BorrowFromBookView()
         {
             InitializeComponent();

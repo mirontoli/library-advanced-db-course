@@ -156,7 +156,8 @@ namespace Biblan.Views
 
         private void btnBorrow_Click(object sender, RoutedEventArgs e)
         {
-
+            Book book = GetSelectedBook();
+            controller.ShowBorrowFromBookView(book);
         }
 
     }
