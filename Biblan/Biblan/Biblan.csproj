@@ -68,9 +68,6 @@
     <Compile Include="Views\addBook.xaml.cs">
       <DependentUpon>addBook.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ChangeCutomer.xaml.cs">
-      <DependentUpon>ChangeCutomer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
@@ -85,10 +82,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BookView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ChangeCutomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
