@@ -37,13 +37,6 @@
     <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.usp_return_book" Method="usp_return_book">
-    <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
-    <Parameter Name="customerID" Type="System.String" DbType="VarChar(75)" />
-    <Parameter Name="copyID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="bdate" Type="System.DateTime" DbType="DateTime" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.usp_test_insert" Method="usp_test_insert">
     <Parameter Name="temp" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
@@ -142,5 +135,11 @@
       <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CopyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.usp_return_book" Method="usp_return_book">
+    <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
+    <Parameter Name="customerID" Type="System.String" DbType="VarChar(75)" />
+    <Parameter Name="copyID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -35,5 +35,10 @@ namespace Biblan.Views
         {
             this.Close();
         }
+
+        private void btnReturn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

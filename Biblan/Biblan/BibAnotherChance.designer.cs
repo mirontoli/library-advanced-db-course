@@ -104,13 +104,6 @@ namespace Biblan
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_return_book")]
-		public int usp_return_book([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(35)")] string isbn, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(75)")] string customerID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> copyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> bdate)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), isbn, customerID, copyID, bdate);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_test_insert")]
 		public int usp_test_insert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string temp)
 		{
@@ -182,6 +175,13 @@ namespace Biblan
 		public IQueryable<get_all_borrowsResult> get_all_borrows()
 		{
 			return this.CreateMethodCallQuery<get_all_borrowsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_return_book")]
+		public int usp_return_book([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(35)")] string isbn, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(75)")] string customerID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> copyID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), isbn, customerID, copyID);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
