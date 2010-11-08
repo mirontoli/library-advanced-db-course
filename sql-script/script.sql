@@ -225,7 +225,22 @@ AS RETURN (
 	SELECT *
 	FROM Customer
 )
-
+-- Anatoly 20101108
+CREATE PROCEDURE usp_add_customer
+@name VARCHAR(50),
+@address VARCHAR(75),
+@phone VARCHAR(50)
+AS
+	begin
+		DECLARE @CustomerID INT
+		SELECT @CustomerID = MAX(CustomerID) + 1
+		FROM Customer
+		IF @CustomerID IS NULL
+			BEGIN
+				SET @CustomerID = 1
+			END
+		INSERT INTO Customer VALUES(@customerID, @name, @address, @phone)
+	end
 -- create procedure Dino 20101108
 CREATE PROCEDURE usp_delete_customer
 @customerID INT
@@ -242,7 +257,7 @@ AS
 	end
 )
 
-ALTER FUNCTION get_all_borrows()
+CREATE FUNCTION get_all_borrows()
 RETURNS TABLE
 AS RETURN (
 	SELECT ISBN, CustomerID, CopyID
