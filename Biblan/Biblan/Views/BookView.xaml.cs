@@ -154,5 +154,10 @@ namespace Biblan.Views
             btnBorrow.IsEnabled = true;
         }
 
+        private void btnBorrow_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

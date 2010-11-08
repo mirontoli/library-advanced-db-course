@@ -34,6 +34,6 @@
         </ComboBox>
         <Button Content="Add a new copy" Height="23" HorizontalAlignment="Left" Margin="260,238,0,0" Name="btnAddCopy" VerticalAlignment="Top" Width="114" IsEnabled="False" Click="btnAddCopy_Click" />
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="342,309,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
-        <Button Content="Borrow" Height="23" HorizontalAlignment="Left" Margin="118,276,0,0" Name="btnBorrow" VerticalAlignment="Top" Width="116" IsEnabled="False" />
+        <Button Content="Borrow" Height="23" HorizontalAlignment="Left" Margin="118,276,0,0" Name="btnBorrow" VerticalAlignment="Top" Width="116" IsEnabled="False" Click="btnBorrow_Click" />
     </Grid>
 </Window>
