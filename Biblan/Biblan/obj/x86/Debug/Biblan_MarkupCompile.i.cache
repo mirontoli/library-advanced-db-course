@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\svn\trunk\Biblan\Biblan\App.xaml
-11151548125
+7370635083
 
-6542679066
-12-1547151337
-MainWindow.xaml;
+181290856257
+131287280978
+Views\addBook.xaml;Views\BookView.xaml;Views\CustomerView.xaml;Views\DeleteCustomer.xaml;Views\MainWindow.xaml;Views\SmallExtras.xaml;Views\AddCustomer.xaml;
 
 False
 
