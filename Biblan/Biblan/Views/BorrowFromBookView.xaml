@@ -1,8 +1,9 @@
 ﻿<Window x:Class="Biblan.Views.BorrowFromBookView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="BorrowFromBookView" Height="300" Width="300">
+        Title="BorrowFromBookView" Height="300" Width="507">
     <Grid>
-        
+        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="174,13,0,0" Name="lblBook" VerticalAlignment="Top" />
+        <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="178,50,0,0" Name="lblInstruction" VerticalAlignment="Top" />
     </Grid>
 </Window>
