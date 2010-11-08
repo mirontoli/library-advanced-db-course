@@ -47,9 +47,10 @@ namespace Biblan.Views
             //TODO
         }
 
-        private void btnSearchBooks_Click(object sender, RoutedEventArgs e)
+        private void btnBorrow_Click(object sender, RoutedEventArgs e)
         {
             //TODO
+            MessageBox.Show("Functionality will be added shortly");
         }
     } 
 }
