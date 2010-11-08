@@ -71,6 +71,17 @@ AS RETURN (
 	FROM Book
 	WHERE Title LIKE '%' + @title + '%'
 )
+-- get all copies of an book Anatoly 20101108
+-- return isbn, copyID, customerID, if customerID null,the book is available
+CREATE FUNCTION get_copies_for_a_book(@isbn VARCHAR(35))
+RETURNS TABLE
+AS RETURN (
+	select c.ISBN, c.CopyID, b.CustomerID
+	from Copy c left outer join Borrow b
+	ON c.ISBN = b.ISBN
+	and c.CopyID = b.CopyID
+	where c.ISBN = '9781412929554'
+)
 
 -- Create functions Pontus 20101028
 CREATE FUNCTION search_number_of_book_pages()
