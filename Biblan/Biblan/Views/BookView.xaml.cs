@@ -138,9 +138,8 @@ namespace Biblan.Views
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-
+              Controller.Controller.GetInstance().ShowAddBookWindow();
         }
-
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

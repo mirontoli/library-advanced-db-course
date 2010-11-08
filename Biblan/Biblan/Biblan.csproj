@@ -111,7 +111,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="bibliotek.designer.cs">
+    <Compile Include="Model\bibliotek.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>bibliotek.dbml</DependentUpon>
@@ -151,14 +151,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="app.config" />
-    <None Include="bibliotek.dbml.layout">
+    <None Include="Model\bibliotek.dbml.layout">
       <DependentUpon>bibliotek.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="bibliotek.dbml">
+    <None Include="Model\bibliotek.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>bibliotek.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>

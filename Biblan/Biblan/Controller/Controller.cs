@@ -206,6 +206,12 @@ namespace Biblan.Controller
             ac.Show();
         }
 
+        public void ShowAddBookWindow()
+        {
+            addBook ab = new addBook();
+            ab.Show();
+        }
+
         internal List<BookCopy> getCopies(Book book)
         {
             List<BookCopy> copies = null;

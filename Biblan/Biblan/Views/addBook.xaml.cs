@@ -27,5 +27,20 @@ namespace Biblan.Views
         {
 
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
