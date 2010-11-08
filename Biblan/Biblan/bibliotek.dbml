@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bibliotek" Class="bibliotekDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=anatoly.mine.nu;Initial Catalog=bibliotek;Persist Security Info=True;User ID=bibliotek" SettingsObjectName="Biblan.Properties.Settings" SettingsPropertyName="bibliotekConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="dbo.usp_add_customer" Method="usp_add_customer">
     <Parameter Name="customerid" Type="System.Int32" DbType="Int" />
     <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />
