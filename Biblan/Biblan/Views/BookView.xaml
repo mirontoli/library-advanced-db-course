@@ -3,15 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Books" ResizeMode="NoResize" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="487" Width="459">
     <Grid Height="413">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="88*" />
-            <ColumnDefinition Width="24*" />
-            <ColumnDefinition Width="70*" />
-            <ColumnDefinition Width="28*" />
-            <ColumnDefinition Width="62*" />
-            <ColumnDefinition Width="40*" />
-            <ColumnDefinition Width="125*" />
-        </Grid.ColumnDefinitions>
+
         <ListView Height="201" 
                   HorizontalAlignment="Left" 
                   Margin="12,26,0,0" 
@@ -21,7 +13,7 @@
                   ItemsSource="{Binding}" 
                   IsEnabled="True" 
                   DataContext="{Binding}"
-                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" Grid.ColumnSpan="7">
+                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" Grid.ColumnSpan="8">
              <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ISBN" Width="100" DisplayMemberBinding="{Binding Path=ISBN}"/>
@@ -31,8 +23,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox Grid.Column="5" Height="23" HorizontalAlignment="Left" Margin="14,0,0,0" Name="tbFilter" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Text="Filter" KeyUp="tbFilter_KeyUp" />
-        <Button Content="Button" Grid.Column="6" Height="23" HorizontalAlignment="Left" Margin="8,300,0,0" Name="btnAddBook" VerticalAlignment="Top" Width="75" />
-        <Button Content="Button" Grid.Column="4" Height="23" HorizontalAlignment="Left" Margin="2,300,0,0" Name="btnChangeBook" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="297,0,0,0" Name="tbFilter" VerticalAlignment="Top" Width="120" Text="Filter" KeyUp="tbFilter_KeyUp" />
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="145,300,0,0" Name="btnAddBook" VerticalAlignment="Top" Width="75" />
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="278,300,0,0" Name="btnChangeBook" VerticalAlignment="Top" Width="75" />
+        <Label Content="Copies:" Height="28" HorizontalAlignment="Left" Margin="49,233,0,0" Name="lblCopies" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="114,238,0,0" Name="comboBox1" VerticalAlignment="Top" Width="120" />
     </Grid>
 </Window>

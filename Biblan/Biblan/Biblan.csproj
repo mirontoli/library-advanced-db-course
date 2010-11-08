@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\BookCopy.cs" />
     <Compile Include="Views\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
@@ -113,7 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Book.cs" />
-    <Compile Include="Model\Borrow.cs" />
+    <Compile Include="Model\Borrowing.cs" />
     <Compile Include="Model\Copy.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Reserv.cs" />

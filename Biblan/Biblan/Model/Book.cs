@@ -41,6 +41,10 @@ namespace Biblan.Model
             get;
             set;
         }
-
+        public List<BookCopy> Copies
+        {
+            get;
+            set;
+        }
     }
 }
