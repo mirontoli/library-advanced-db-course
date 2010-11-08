@@ -13,7 +13,7 @@
                   ItemsSource="{Binding}" 
                   IsEnabled="True" 
                   DataContext="{Binding}"
-                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" Grid.ColumnSpan="8" SelectionChanged="lvBooks_SelectionChanged">
+                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" Grid.ColumnSpan="8" SelectionChanged="lvBooks_SelectionChanged" SelectionMode="Single">
              <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ISBN" Width="100" DisplayMemberBinding="{Binding Path=ISBN}"/>

@@ -1,5 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bibliotek" Class="bibliotekDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=anatoly.mine.nu;Initial Catalog=bibliotek;Persist Security Info=True;User ID=bibliotek" SettingsObjectName="Biblan.Properties.Settings" SettingsPropertyName="bibliotekConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Book" Member="Books">
+    <Type Name="Book">
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="NumberOfPages" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrintYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Book_Copy" Member="Copies" ThisKey="ISBN" OtherKey="ISBN" Type="Copy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Copy" Member="Copies">
+    <Type Name="Copy">
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CopyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Book_Copy" Member="Book" ThisKey="ISBN" OtherKey="ISBN" Type="Book" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.usp_add_customer" Method="usp_add_customer">
     <Parameter Name="customerid" Type="System.Int32" DbType="Int" />
     <Parameter Name="name" Type="System.String" DbType="VarChar(50)" />

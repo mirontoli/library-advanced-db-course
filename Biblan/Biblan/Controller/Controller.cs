@@ -26,11 +26,14 @@ namespace Biblan.Controller
         public List<Book> GetAllBooks()
         {
             var query = from c in dataContext.search_books_titles("")
-                        select new Book { Title = c.Title, 
-                                          NumberOfPages = (int)c.NumberOfPages, 
-                                          Publisher = c.Publisher, 
-                                          ISBN = c.ISBN,
-                                          Author = c.Author };
+                        select new Book
+                        {
+                            Title = c.Title,
+                            NumberOfPages = (int)c.NumberOfPages,
+                            Publisher = c.Publisher,
+                            ISBN = c.ISBN,
+                            Author = c.Author
+                        };
 
             List<Book> books = query.ToList();
             return books;

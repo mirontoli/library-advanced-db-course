@@ -30,6 +30,12 @@ namespace Biblan
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertBook(Book instance);
+    partial void UpdateBook(Book instance);
+    partial void DeleteBook(Book instance);
+    partial void InsertCopy(Copy instance);
+    partial void UpdateCopy(Copy instance);
+    partial void DeleteCopy(Copy instance);
     #endregion
 		
 		public bibliotekDataContext() : 
@@ -60,6 +66,22 @@ namespace Biblan
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<Book> Books
+		{
+			get
+			{
+				return this.GetTable<Book>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Copy> Copies
+		{
+			get
+			{
+				return this.GetTable<Copy>();
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_add_customer")]
@@ -131,6 +153,343 @@ namespace Biblan
 		public IQueryable<search_customers_with_more_than_one_bookResult> search_customers_with_more_than_one_book()
 		{
 			return this.CreateMethodCallQuery<search_customers_with_more_than_one_bookResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Book")]
+	public partial class Book : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _ISBN;
+		
+		private string _Title;
+		
+		private System.Nullable<int> _NumberOfPages;
+		
+		private System.Nullable<int> _PrintYear;
+		
+		private string _Publisher;
+		
+		private string _Author;
+		
+		private EntitySet<Copy> _Copies;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnISBNChanging(string value);
+    partial void OnISBNChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnNumberOfPagesChanging(System.Nullable<int> value);
+    partial void OnNumberOfPagesChanged();
+    partial void OnPrintYearChanging(System.Nullable<int> value);
+    partial void OnPrintYearChanged();
+    partial void OnPublisherChanging(string value);
+    partial void OnPublisherChanged();
+    partial void OnAuthorChanging(string value);
+    partial void OnAuthorChanged();
+    #endregion
+		
+		public Book()
+		{
+			this._Copies = new EntitySet<Copy>(new Action<Copy>(this.attach_Copies), new Action<Copy>(this.detach_Copies));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(35) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ISBN
+		{
+			get
+			{
+				return this._ISBN;
+			}
+			set
+			{
+				if ((this._ISBN != value))
+				{
+					this.OnISBNChanging(value);
+					this.SendPropertyChanging();
+					this._ISBN = value;
+					this.SendPropertyChanged("ISBN");
+					this.OnISBNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(75)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfPages", DbType="Int")]
+		public System.Nullable<int> NumberOfPages
+		{
+			get
+			{
+				return this._NumberOfPages;
+			}
+			set
+			{
+				if ((this._NumberOfPages != value))
+				{
+					this.OnNumberOfPagesChanging(value);
+					this.SendPropertyChanging();
+					this._NumberOfPages = value;
+					this.SendPropertyChanged("NumberOfPages");
+					this.OnNumberOfPagesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PrintYear", DbType="Int")]
+		public System.Nullable<int> PrintYear
+		{
+			get
+			{
+				return this._PrintYear;
+			}
+			set
+			{
+				if ((this._PrintYear != value))
+				{
+					this.OnPrintYearChanging(value);
+					this.SendPropertyChanging();
+					this._PrintYear = value;
+					this.SendPropertyChanged("PrintYear");
+					this.OnPrintYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Publisher", DbType="VarChar(50)")]
+		public string Publisher
+		{
+			get
+			{
+				return this._Publisher;
+			}
+			set
+			{
+				if ((this._Publisher != value))
+				{
+					this.OnPublisherChanging(value);
+					this.SendPropertyChanging();
+					this._Publisher = value;
+					this.SendPropertyChanged("Publisher");
+					this.OnPublisherChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author", DbType="VarChar(50)")]
+		public string Author
+		{
+			get
+			{
+				return this._Author;
+			}
+			set
+			{
+				if ((this._Author != value))
+				{
+					this.OnAuthorChanging(value);
+					this.SendPropertyChanging();
+					this._Author = value;
+					this.SendPropertyChanged("Author");
+					this.OnAuthorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Book_Copy", Storage="_Copies", ThisKey="ISBN", OtherKey="ISBN")]
+		public EntitySet<Copy> Copies
+		{
+			get
+			{
+				return this._Copies;
+			}
+			set
+			{
+				this._Copies.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Copies(Copy entity)
+		{
+			this.SendPropertyChanging();
+			entity.Book = this;
+		}
+		
+		private void detach_Copies(Copy entity)
+		{
+			this.SendPropertyChanging();
+			entity.Book = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Copy")]
+	public partial class Copy : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _ISBN;
+		
+		private int _CopyID;
+		
+		private EntityRef<Book> _Book;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnISBNChanging(string value);
+    partial void OnISBNChanged();
+    partial void OnCopyIDChanging(int value);
+    partial void OnCopyIDChanged();
+    #endregion
+		
+		public Copy()
+		{
+			this._Book = default(EntityRef<Book>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(35) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ISBN
+		{
+			get
+			{
+				return this._ISBN;
+			}
+			set
+			{
+				if ((this._ISBN != value))
+				{
+					if (this._Book.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnISBNChanging(value);
+					this.SendPropertyChanging();
+					this._ISBN = value;
+					this.SendPropertyChanged("ISBN");
+					this.OnISBNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CopyID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int CopyID
+		{
+			get
+			{
+				return this._CopyID;
+			}
+			set
+			{
+				if ((this._CopyID != value))
+				{
+					this.OnCopyIDChanging(value);
+					this.SendPropertyChanging();
+					this._CopyID = value;
+					this.SendPropertyChanged("CopyID");
+					this.OnCopyIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Book_Copy", Storage="_Book", ThisKey="ISBN", OtherKey="ISBN", IsForeignKey=true)]
+		public Book Book
+		{
+			get
+			{
+				return this._Book.Entity;
+			}
+			set
+			{
+				Book previousValue = this._Book.Entity;
+				if (((previousValue != value) 
+							|| (this._Book.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Book.Entity = null;
+						previousValue.Copies.Remove(this);
+					}
+					this._Book.Entity = value;
+					if ((value != null))
+					{
+						value.Copies.Add(this);
+						this._ISBN = value.ISBN;
+					}
+					else
+					{
+						this._ISBN = default(string);
+					}
+					this.SendPropertyChanged("Book");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
