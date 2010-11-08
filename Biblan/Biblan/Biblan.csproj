@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="bibliotek.designer.cs" />
     <Compile Include="Model\BookCopy.cs" />
     <Compile Include="Views\addBook.xaml.cs">
       <DependentUpon>addBook.xaml</DependentUpon>
@@ -151,7 +152,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="app.config" />
+    <None Include="bibliotek.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>bibliotek1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Model\bibliotek.dbml.layout">
+      <DependentUpon>bibliotek.dbml</DependentUpon>
+    </None>
+    <None Include="bibliotek.dbml.layout">
       <DependentUpon>bibliotek.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Properties\Resources.resx">
