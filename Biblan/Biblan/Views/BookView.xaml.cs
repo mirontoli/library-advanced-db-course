@@ -30,7 +30,7 @@ namespace Biblan.Views
 
         private void TestBind()
         {
-            lvBinding.ItemsSource = controller.GetAllBooks(); 
+            lvBooks.ItemsSource = controller.GetAllBooks(); 
         }
         // inspired by:
         // http://msdn.microsoft.com/en-us/library/ms745786.aspx
@@ -68,7 +68,7 @@ namespace Biblan.Views
         private void Sort(string sortBy, ListSortDirection direction)
         {
             ICollectionView dataView =
-              CollectionViewSource.GetDefaultView(lvBinding.ItemsSource);
+              CollectionViewSource.GetDefaultView(lvBooks.ItemsSource);
 
             dataView.SortDescriptions.Clear();
             SortDescription sd = new SortDescription(sortBy, direction);
@@ -82,7 +82,7 @@ namespace Biblan.Views
             if (e.Key == Key.Enter)
             {
                 // Get the default view from the listview
-                ICollectionView view = CollectionViewSource.GetDefaultView(lvBinding.ItemsSource);
+                ICollectionView view = CollectionViewSource.GetDefaultView(lvBooks.ItemsSource);
 
                 view.Filter = null;
                 view.Filter = new Predicate<object>(FilterBooks);
@@ -100,6 +100,11 @@ namespace Biblan.Views
             // apply the filter
             if (book.Title.ToLower().Contains(textFilter.ToLower())) return true;
             return false;
+        }
+
+        private void lvBooks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show(lvBooks.SelectedItem.ToString());
         }
 
     }
