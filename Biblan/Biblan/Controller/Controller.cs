@@ -215,6 +215,12 @@ namespace Biblan.Controller
             copies = query.ToList<BookCopy>();
             return copies;
         }
+        
+        public void ShowChangeCutomerWindow()
+        {
+            ChangeCutomer cc = new ChangeCutomer();
+            cc.Show();
+        }
 
         internal void AddBookCopy(Book book)
         {

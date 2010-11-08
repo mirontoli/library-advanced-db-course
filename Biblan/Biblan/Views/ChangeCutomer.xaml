@@ -1,0 +1,18 @@
+﻿<Window x:Class="Biblan.Views.ChangeCutomer"
+        xmlns="http://schemas.microsofts.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Change a Customer" Height="340" Width="496">
+    <Grid>
+        <ListView Height="301" HorizontalAlignment="Left" Name="listViewChangeCustomer" VerticalAlignment="Top" Width="474" />
+        <Button Content="OK" Height="23" HorizontalAlignment="Left" Margin="264,0,0,12" Name="btnOK" VerticalAlignment="Bottom" Width="75" Click="btnOK_Click" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,266,26,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="31,39,0,0" Name="txtCustomerID" Text="CustomerID:" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="31,202,0,0" Name="txtPhone" Text="Phone:" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="31,144,0,0" Name="txtAddress" Text="Address:" VerticalAlignment="Top" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="33,89,0,0" Name="txtName" Text="Name:" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="128,39,0,0" Name="txtBoxCustomerID" VerticalAlignment="Top" Width="320" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="128,89,0,0" Name="txtBoxnName" VerticalAlignment="Top" Width="320" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="128,144,0,0" Name="txtBoxAddress" VerticalAlignment="Top" Width="320" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="128,202,0,0" Name="txtBoxPhone" VerticalAlignment="Top" Width="320" />
+    </Grid>
+</Window>
