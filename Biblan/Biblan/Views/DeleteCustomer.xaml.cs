@@ -21,6 +21,8 @@ namespace Biblan.Views
     /// </summary>
     public partial class DeleteCustomer : Window
     {
+        Controller.Controller controller = Controller.Controller.GetInstance();
+
         public DeleteCustomer()
         {
             InitializeComponent();
@@ -28,6 +30,14 @@ namespace Biblan.Views
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            string CustID = txtBoxCustomerID.Text;
+            int CID = Convert.ToInt32(CustID);
+            controller.DeleteCustomer(CID);
             this.Close();
         }
     }

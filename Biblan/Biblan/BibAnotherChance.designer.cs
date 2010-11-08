@@ -171,6 +171,12 @@ namespace Biblan
 		{
 			return this.CreateMethodCallQuery<search_number_of_book_pagesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.get_all_customers", IsComposable=true)]
+		public IQueryable<get_all_customersResult> get_all_customers()
+		{
+			return this.CreateMethodCallQuery<get_all_customersResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
 	}
 	
 	public partial class get_available_copies_for_a_bookResult
@@ -978,6 +984,86 @@ namespace Biblan
 				if ((this._Author != value))
 				{
 					this._Author = value;
+				}
+			}
+		}
+	}
+	
+	public partial class get_all_customersResult
+	{
+		
+		private int _CustomerID;
+		
+		private string _Name;
+		
+		private string _Address;
+		
+		private string _Phone;
+		
+		public get_all_customersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="Int NOT NULL")]
+		public int CustomerID
+		{
+			get
+			{
+				return this._CustomerID;
+			}
+			set
+			{
+				if ((this._CustomerID != value))
+				{
+					this._CustomerID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(75)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(50)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
 				}
 			}
 		}

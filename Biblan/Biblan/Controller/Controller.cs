@@ -268,5 +268,25 @@ namespace Biblan.Controller
         {
             dataContext.usp_update_customer(CID, name, address, phone);
         }
+
+        internal void DeleteCustomer(int CID)
+        {
+            dataContext.usp_delete_customer(CID);
+        }
+
+        public List<Customer> GetAllCustomers()
+        {
+            var query = from c in dataContext.get_all_customers()
+                        select new Customer
+                        {
+                            CustomerID = c.CustomerID,
+                            Name = c.Name,
+                            Address = c.Address,
+                            Phone = c.Phone
+                        };
+
+            List<Customer> customers = query.ToList();
+            return customers;
+        }
     }
 }

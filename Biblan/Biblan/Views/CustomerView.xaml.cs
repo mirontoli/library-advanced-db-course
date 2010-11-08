@@ -21,9 +21,17 @@ namespace Biblan.Views
     /// </summary>
     public partial class CustomerView : Window
     {
+        private Controller.Controller controller = Controller.Controller.GetInstance();
+
         public CustomerView()
         {
             InitializeComponent();
+            TestBind();
+        }
+
+        private void TestBind()
+        {
+            lvCustomer.ItemsSource = controller.GetAllCustomers();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

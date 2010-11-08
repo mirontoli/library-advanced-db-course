@@ -128,4 +128,12 @@
       <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.get_all_customers" Method="get_all_customers" IsComposable="true">
+    <ElementType Name="get_all_customersResult">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
