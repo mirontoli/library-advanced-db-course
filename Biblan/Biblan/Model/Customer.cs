@@ -14,7 +14,6 @@ namespace Biblan.Model
         }
 
         public string Name
-
         {
             get;
             set;
