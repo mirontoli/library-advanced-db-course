@@ -121,6 +121,7 @@ namespace Biblan.Views
             if (book != null) 
             {
                 controller.AddBookCopy(book);
+                btnAddCopy.IsEnabled = false;
             }
         }
         private Book GetSelectedBook()
