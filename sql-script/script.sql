@@ -80,7 +80,7 @@ AS RETURN (
 	from Copy c left outer join Borrow b
 	ON c.ISBN = b.ISBN
 	and c.CopyID = b.CopyID
-	where c.ISBN = '9781412929554'
+	where c.ISBN = @isbn
 )
 
 -- Create functions Pontus 20101028
