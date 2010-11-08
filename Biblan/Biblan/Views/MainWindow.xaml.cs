@@ -25,10 +25,6 @@ namespace Biblan.Views
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
 
         private void btnSpike_Click(object sender, RoutedEventArgs e)
         {
@@ -44,6 +40,16 @@ namespace Biblan.Views
         private void btnCustomers_Click(object sender, RoutedEventArgs e)
         {
             Controller.Controller.GetInstance().ShowCustomerViewWindow();
+        }
+
+        private void btnBorrowings_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO
+        }
+
+        private void btnSearchBooks_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO
         }
     } 
 }
