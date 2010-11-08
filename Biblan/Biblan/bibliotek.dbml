@@ -86,6 +86,10 @@
   </Function>
   <Function Name="dbo.search_customers_with_more_than_one_book" Method="search_customers_with_more_than_one_book" IsComposable="true">
     <ElementType Name="search_customers_with_more_than_one_bookResult">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="NumberOf" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>

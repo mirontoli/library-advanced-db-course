@@ -35,6 +35,7 @@ namespace Biblan.Views
         {
             lvSmallExtrasBooks.Visibility = Visibility.Hidden;
             lvSmallExtrasCustomers.Visibility = Visibility.Visible;
+            lvSmallExtrasCustomers.ItemsSource = controller.GetCustomersWithMoreThanOneBook();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

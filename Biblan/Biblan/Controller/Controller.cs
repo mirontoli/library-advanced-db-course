@@ -96,20 +96,20 @@ namespace Biblan.Controller
             List<Book> books = query.ToList();
             return books;
         }
-        /*public List<Customer> GetCustomersWithMoreThanOneBook()
+        public List<Customer> GetCustomersWithMoreThanOneBook()
         {
             var query = from c in dataContext.search_customers_with_more_than_one_book()
                         select new Customer
                         {
-                            CustomerID = c.CustomerID, //finns inte
-                            Name = c.Name, //finns inte
-                            Address = c.Address, //finns inte
-                            Phone = c.Phone, //finns inte
+                            CustomerID = c.CustomerID,
+                            Name = c.Name,
+                            Address = c.Address,
+                            Phone = c.Phone
                         };
 
-            List<Customer> customer = query.ToList();
-            return customer;
-        }*/
+            List<Customer> customers = query.ToList();
+            return customers;
+        }
 
         #region gamla tester
         //private void AddBook()

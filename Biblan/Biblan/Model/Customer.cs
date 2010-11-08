@@ -26,7 +26,7 @@ namespace Biblan.Model
             set;
         }
 
-        public int Phone
+        public string Phone
         {
             get;
             set;
