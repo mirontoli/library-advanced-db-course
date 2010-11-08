@@ -97,8 +97,12 @@ namespace Biblan.Views
 
             if (textFilter.Trim().Length == 0) return true; // the filter is empty - pass all items
 
+            string text = textFilter.ToLower();
             // apply the filter
-            if (book.Title.ToLower().Contains(textFilter.ToLower())) return true;
+            if (book.Title.ToLower().Contains(text)
+                || book.ISBN.ToLower().Contains(text)
+                || book.Publisher.ToLower().Contains(text)
+                || book.Author.ToLower().Contains(text)) return true;
             return false;
         }
 
@@ -138,7 +142,7 @@ namespace Biblan.Views
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-              Controller.Controller.GetInstance().ShowAddBookWindow();
+              controller.ShowAddBookWindow();
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
