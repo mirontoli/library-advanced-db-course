@@ -199,5 +199,16 @@ namespace Biblan.Controller
             ac.Show();
 
         }
+
+        internal List<BookCopy> getCopies(Book book)
+        {
+            List<BookCopy> copies = null;
+            var query = from c in dataContext.get_copies_for_a_book(book.ISBN)
+                        select new BookCopy {
+                            CopyID = c.CopyID
+                        };
+            copies = query.ToList<BookCopy>();
+            return copies;
+        }
     }
 }

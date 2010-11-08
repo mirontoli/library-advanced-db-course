@@ -104,10 +104,18 @@ namespace Biblan.Views
 
         private void lvBooks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (lvBooks.SelectedItem == null)
+            {
+                cbCopies.IsEnabled = false;
+                btnAddCopy.IsEnabled = false;
+                return;
+            }
             Book book = lvBooks.SelectedItem as Book;
             string isbn = book.ISBN;
-
-            MessageBox.Show("you want see " + book.Title + "?");
+            cbCopies.IsEnabled = true;
+            btnAddCopy.IsEnabled = true;
+            cbCopies.ItemsSource = null;
+            cbCopies.ItemsSource = controller.getCopies(book);
         }
 
     }
