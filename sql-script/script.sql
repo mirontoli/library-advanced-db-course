@@ -200,7 +200,7 @@ AS
 
 CREATE PROCEDURE usp_return_book
 @isbn VARCHAR(35),
-@customerID VARCHAR(75),
+@customerID INT,
 @copyID INT
 AS
 	begin
