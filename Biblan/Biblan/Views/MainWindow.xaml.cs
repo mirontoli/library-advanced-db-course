@@ -20,37 +20,39 @@ namespace Biblan.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        Controller.Controller controller = Controller.Controller.GetInstance();
         public MainWindow()
         {
             InitializeComponent();
         }
 
 
-        private void btnSpike_Click(object sender, RoutedEventArgs e)
+        private void btnBooks_Click(object sender, RoutedEventArgs e)
         {
-            BookView bs = new BookView();
-            bs.Show();
+            controller.ShowBookView();
         }
 
         private void btnSmallExtras_Click(object sender, RoutedEventArgs e)
         {
-            Controller.Controller.GetInstance().ShowSmallExtrasWindow();
+            controller.ShowSmallExtrasWindow();
         }
 
         private void btnCustomers_Click(object sender, RoutedEventArgs e)
         {
-            Controller.Controller.GetInstance().ShowCustomerViewWindow();
+            controller.ShowCustomerViewWindow();
         }
 
         private void btnBorrowings_Click(object sender, RoutedEventArgs e)
         {
-            Controller.Controller.GetInstance().ShowBorrowingsWindow();
+            controller.ShowBorrowingsWindow();
         }
 
         private void btnBorrow_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
-            MessageBox.Show("Functionality will be added shortly");
+            if (MessageBox.Show("In order to borrow, open Books View.\r\nWant to open it now?", "Borrow? Go to Books View", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                controller.ShowBookView();
+            }
         }
     } 
 }

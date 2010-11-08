@@ -5,7 +5,7 @@
     <Grid>
         <Button Content="Borrowings" Height="23" HorizontalAlignment="Left" Margin="416,276,0,0" Name="btnBorrowings" VerticalAlignment="Top" Width="75" IsCancel="True" Click="btnBorrowings_Click" />
         <TextBlock Height="84" HorizontalAlignment="Left" Margin="204,75,0,0" Name="txtBlockTest" Text="TextBlock" VerticalAlignment="Top" Width="232" />
-        <Button Content="Books" Height="23" HorizontalAlignment="Left" Margin="313,276,0,0" Name="btnSpike" VerticalAlignment="Top" Width="97" Click="btnSpike_Click" />
+        <Button Content="Books" Height="23" HorizontalAlignment="Left" Margin="313,276,0,0" Name="btnBooks" VerticalAlignment="Top" Width="97" Click="btnBooks_Click" />
         <Button Content="Borrow" Height="23" HorizontalAlignment="Left" Margin="12,276,0,0" Name="btnBorrow" VerticalAlignment="Top" Width="85" Click="btnBorrow_Click" />
         <Button Content="Customers" Height="23" HorizontalAlignment="Left" Margin="103,276,0,0" Name="btnCustomers" VerticalAlignment="Top" Width="85" Click="btnCustomers_Click" />
         <Button Content="Small Extras" Height="23" HorizontalAlignment="Left" Margin="194,276,0,0" Name="btnSmallExtras" VerticalAlignment="Top" Width="85" Click="btnSmallExtras_Click" />

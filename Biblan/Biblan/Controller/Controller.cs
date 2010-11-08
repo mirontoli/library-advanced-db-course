@@ -335,5 +335,11 @@ namespace Biblan.Controller
         {
             dataContext.usp_return_book(bor.BookCopy.Book.ISBN, bor.Customer.CustomerID, bor.BookCopy.CopyID);
         }
+
+        public void ShowBookView()
+        {
+            BookView bs = new BookView();
+            bs.Show();
+        }
     }
 }
