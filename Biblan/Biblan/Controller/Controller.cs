@@ -235,6 +235,12 @@ namespace Biblan.Controller
             dc.Show();
         }
 
+        public void ShowBorrowingsWindow()
+        {
+            BorrowingView bv = new BorrowingView();
+            bv.Show();
+        }
+
         internal void AddBookCopy(Book book)
         {
             dataContext.usp_add_copy(book.ISBN);

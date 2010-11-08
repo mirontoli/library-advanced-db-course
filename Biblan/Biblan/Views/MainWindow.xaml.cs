@@ -44,7 +44,7 @@ namespace Biblan.Views
 
         private void btnBorrowings_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
+            Controller.Controller.GetInstance().ShowBorrowingsWindow();
         }
 
         private void btnBorrow_Click(object sender, RoutedEventArgs e)
