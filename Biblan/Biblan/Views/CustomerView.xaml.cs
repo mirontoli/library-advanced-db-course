@@ -45,15 +45,6 @@ namespace Biblan.Views
         {
             Controller.Controller.GetInstance().ShowAddCustomerWindow();
         }
-/*
-        public void addDetails(CustomerView details)
-        {
-            CustomerView.put(details.getCustomerID(), details);
-            CustomerView.put(details.getName(), details);
-            CustomerView.put(details.getAdress(), details);
-            CustomerView.put(details.getPhone(), details);
-            //numberOfEntries++;
-        }
-        */
+
     }
 }
