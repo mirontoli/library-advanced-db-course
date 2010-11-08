@@ -105,6 +105,12 @@ namespace Biblan.Controller
             List<Book> books = query.ToList();
             return books;
         }
+
+        public void AddCustomer(int customerID, string name, string address, string phone)
+        {
+            dataContext.usp_add_customer(customerID, name, address, phone);
+        }
+
         public List<Customer> GetCustomersWithMoreThanOneBook()
         {
             var query = from c in dataContext.search_customers_with_more_than_one_book()
@@ -197,7 +203,6 @@ namespace Biblan.Controller
         {
             AddCustomer ac = new AddCustomer();
             ac.Show();
-
         }
 
         internal List<BookCopy> getCopies(Book book)

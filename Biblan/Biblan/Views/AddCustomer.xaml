@@ -4,7 +4,7 @@
         Title="Add a customer" Height="340" Width="496">
     <Grid>
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="399,278,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
-        <Button Content="OK" Height="23" HorizontalAlignment="Left" Margin="299,278,0,0" Name="btnOK" VerticalAlignment="Top" Width="75" />
+        <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="299,278,0,0" Name="btnAdd" VerticalAlignment="Top" Width="75" Click="btnAdd_Click" />
         <ListView Height="272" HorizontalAlignment="Left" Name="lvAddCustomer" VerticalAlignment="Top" Width="474" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="txtCustomerID" Text="Customer ID:" VerticalAlignment="Top" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="87,9,0,0" Name="txtBoxCustomerID" VerticalAlignment="Top" Width="375" />
