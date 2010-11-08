@@ -38,7 +38,14 @@ namespace Biblan.Views
 
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
+            Model.Borrowing bor = lvBorrowing.SelectedItem as Model.Borrowing;
+            controller.ReturnBook(bor);
+            btnReturn.IsEnabled = false;
+        }
 
+        private void lvBorrowing_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnReturn.IsEnabled = true;
         }
     }
 }

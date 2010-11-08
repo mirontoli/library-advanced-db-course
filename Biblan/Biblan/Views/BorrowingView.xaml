@@ -4,7 +4,7 @@
         Title="Borrowings" Height="300" Width="532">
     <Grid>
         <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="435,238,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
-        <ListView Height="232" HorizontalAlignment="Left" Name="lvBorrowing" VerticalAlignment="Top" Width="510">
+        <ListView Height="232" HorizontalAlignment="Left" Name="lvBorrowing" VerticalAlignment="Top" Width="510" SelectionChanged="lvBorrowing_SelectionChanged">
             <ListView.View>
             <GridView>
                 <GridViewColumn Header="ISBN" Width="200" DisplayMemberBinding="{Binding Path=BookCopy.Book.ISBN}"/>
@@ -14,6 +14,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Return book" Height="23" HorizontalAlignment="Left" Margin="337,238,0,0" Name="btnReturn" VerticalAlignment="Top" Width="75" Click="btnReturn_Click" />
+        <Button Content="Return book" Height="23" HorizontalAlignment="Left" Margin="337,238,0,0" Name="btnReturn" VerticalAlignment="Top" Width="75" Click="btnReturn_Click" IsEnabled="False" />
     </Grid>
 </Window>

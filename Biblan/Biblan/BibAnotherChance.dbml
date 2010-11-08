@@ -138,7 +138,7 @@
   </Function>
   <Function Name="dbo.usp_return_book" Method="usp_return_book">
     <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
-    <Parameter Name="customerID" Type="System.String" DbType="VarChar(75)" />
+    <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
     <Parameter Name="copyID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>

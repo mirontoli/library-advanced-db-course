@@ -330,5 +330,10 @@ namespace Biblan.Controller
         {
             dataContext.usp_add_book(ISBN, title, pages, year, author, publisher);
         }
+
+        public void ReturnBook(Borrowing bor)
+        {
+            dataContext.usp_return_book(bor.BookCopy.Book.ISBN, bor.Customer.CustomerID, bor.BookCopy.CopyID);
+        }
     }
 }
