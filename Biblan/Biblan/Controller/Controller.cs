@@ -81,7 +81,7 @@ namespace Biblan.Controller
             return books;
         }
 
-        public List<Book> GetLatestBookBorrowed() // ska inte returnera en lista utan enbart en bok
+        public List<Book> GetLatestBookBorrowed() // kan vara bra att använda lista om nu, mot förmodan, två böcker skulle lånas ut under exakt samma millisekund.
         {
             var query = from c in dataContext.get_last_book_borrowed()
                         select new Book
