@@ -292,11 +292,12 @@ namespace Biblan.Controller
             dataContext.usp_add_copy(book.ISBN);
         }
 
-        public void ShowBorrowFromBookView(Book book)
+        public void ShowBorrowFromBookView(BookCopy bookCopy)
         {
             BorrowFromBookView view = new BorrowFromBookView();
-            view.BookToBorrow = book;
+            view.BookCopyToBorrow = bookCopy;
             view.Show();
+            view.SetTitle();
         }
 
         internal void ChangeCustomer(int CID, string name, string address, string phone)

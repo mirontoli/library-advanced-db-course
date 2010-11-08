@@ -159,7 +159,7 @@ namespace Biblan.Views
             Book book = GetSelectedBook();
             BookCopy bc = cbCopies.SelectedItem as BookCopy;
             bc.Book = book;
-            controller.ShowBorrowFromBookView(book);
+            controller.ShowBorrowFromBookView(bc);
         }
 
     }

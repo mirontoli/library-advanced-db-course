@@ -18,7 +18,7 @@ namespace Biblan.Views
     /// </summary>
     public partial class BorrowFromBookView : Window
     {
-        public Model.Book BookToBorrow
+        public Model.BookCopy BookCopyToBorrow
         {
             get;
             set;
@@ -26,7 +26,11 @@ namespace Biblan.Views
         public BorrowFromBookView()
         {
             InitializeComponent();
-            lblBook.Content = BookToBorrow.Title;
+        }
+
+        public void SetTitle()
+        {
+            lblBook.Content = BookCopyToBorrow.Book.Title;
         }
     }
 }
