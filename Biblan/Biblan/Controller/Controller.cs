@@ -216,10 +216,16 @@ namespace Biblan.Controller
             return copies;
         }
         
-        public void ShowChangeCutomerWindow()
+        public void ShowChangeCustomerWindow()
         {
-            ChangeCutomer cc = new ChangeCutomer();
+            ChangeCustomer cc = new ChangeCustomer();
             cc.Show();
+        }
+
+        public void ShowDeleteCustomerWindow()
+        {
+            DeleteCustomer dc = new DeleteCustomer();
+            dc.Show();
         }
 
         internal void AddBookCopy(Book book)
