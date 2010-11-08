@@ -24,8 +24,8 @@
             </ListView.View>
         </ListView>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="297,0,0,0" Name="tbFilter" VerticalAlignment="Top" Width="120" Text="Filter" KeyUp="tbFilter_KeyUp" />
-        <Button Content="Add a new Book" Height="23" HorizontalAlignment="Left" Margin="145,300,0,0" Name="btnAddBook" VerticalAlignment="Top" Width="104" Click="btnAddBook_Click" />
-        <Button Content="Change Book" Height="23" HorizontalAlignment="Left" Margin="278,300,0,0" Name="btnChangeBook" VerticalAlignment="Top" Width="96" />
+        <Button Content="Add a new book" Height="23" HorizontalAlignment="Left" Margin="145,300,0,0" Name="btnAddBook" VerticalAlignment="Top" Width="104" Click="btnAddBook_Click" />
+        <Button Content="Change book" Height="23" HorizontalAlignment="Left" Margin="278,300,0,0" Name="btnChangeBook" VerticalAlignment="Top" Width="96" />
         <Label Content="Copies:" Height="28" HorizontalAlignment="Left" Margin="49,233,0,0" Name="lblCopies" VerticalAlignment="Top" />
         <ComboBox Height="23" HorizontalAlignment="Left" Margin="114,238,0,0" Name="cbCopies" VerticalAlignment="Top" Width="120" IsEnabled="False" ItemsSource="{Binding}" 
             DisplayMemberPath="CopyID" 
