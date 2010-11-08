@@ -28,7 +28,7 @@ namespace Biblan.Views
 
         private void TestBorrowings()
         {
-            lvBorrowing.ItemsSource = controller.GetAllBooks();
+            lvBorrowing.ItemsSource = controller.GetAllBorrowings();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

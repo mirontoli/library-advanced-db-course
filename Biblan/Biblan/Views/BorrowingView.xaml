@@ -7,10 +7,11 @@
         <ListView Height="232" HorizontalAlignment="Left" Name="lvBorrowing" VerticalAlignment="Top" Width="510">
             <ListView.View>
             <GridView>
-                <GridViewColumn Header="ISBN" Width="200" DisplayMemberBinding="{Binding Path=ISBN}"/>
-                <GridViewColumn Header="Copy ID" Width="151" DisplayMemberBinding="{Binding Path=CopyID}"/>
-                <GridViewColumn Header="Customer ID" Width="152" DisplayMemberBinding="{Binding Path=CustomerID}"/>
-            </GridView>
+                <GridViewColumn Header="ISBN" Width="200" DisplayMemberBinding="{Binding Path=BookCopy.Book.ISBN}"/>
+                    <GridViewColumn Header="Copy ID" Width="151" DisplayMemberBinding="{Binding Path=BookCopy.CopyID}"/>
+                    <GridViewColumn Header="Customer ID" Width="152" DisplayMemberBinding="{Binding Path=Customer.CustomerID}"/>
+
+                </GridView>
             </ListView.View>
         </ListView>
         <Button Content="Return book" Height="23" HorizontalAlignment="Left" Margin="337,238,0,0" Name="btnReturn" VerticalAlignment="Top" Width="75" />

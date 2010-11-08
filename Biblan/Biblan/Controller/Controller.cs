@@ -34,7 +34,7 @@ namespace Biblan.Controller
                             CopyID = c.CopyID,
                             CustomerID = c.CustomerID
                         };
-            List<Borrowing> borrowings = null;
+            List<Borrowing> borrowings = new List<Borrowing>();
             foreach (var item in query)
             {
                 Book book = new Book();
@@ -42,6 +42,7 @@ namespace Biblan.Controller
 
                 BookCopy bc = new BookCopy();
                 bc.Book = book;
+                bc.CopyID = item.CopyID;
 
                 Customer cust = new Customer();
                 cust.CustomerID = item.CustomerID;
