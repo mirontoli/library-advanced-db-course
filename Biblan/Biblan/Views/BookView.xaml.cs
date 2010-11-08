@@ -135,5 +135,10 @@ namespace Biblan.Views
             return book;
         }
 
+        private void btnAddBook_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
