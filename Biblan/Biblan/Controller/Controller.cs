@@ -344,7 +344,10 @@ namespace Biblan.Controller
 
         public void Borrow(BookCopy BookCopyToBorrow, Customer customer)
         {
-            dataContext.usp_borrow_book(BookCopyToBorrow.Book.ISBN, customer.CustomerID, BookCopyToBorrow.CopyID);
+            string isbn = BookCopyToBorrow.Book.ISBN;
+            int customerID = customer.CustomerID;
+            int copyID = BookCopyToBorrow.CopyID;
+            dataContext.usp_borrow_book(isbn, customerID, copyID);
         }
     }
 }
