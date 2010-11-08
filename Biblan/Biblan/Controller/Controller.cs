@@ -34,8 +34,14 @@ namespace Biblan.Controller
                             ISBN = c.ISBN,
                             Author = c.Author
                         };
-
-            List<Book> books = query.ToList();
+            List<Book> books = null;
+            try
+            {
+                books = query.ToList<Book>();
+            }
+            catch (Exception)
+            {
+            }
             return books;
         }
         public List<Book> GetAllBooksWithMoreThan500Pages()

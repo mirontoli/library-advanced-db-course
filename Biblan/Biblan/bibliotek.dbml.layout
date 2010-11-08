@@ -1,25 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="bibliotek">
   <DataContextMoniker Name="/bibliotekDataContext" />
-  <nestedChildShapes>
-    <classShape Id="becccc3f-a74c-4725-be23-45d780c8d902" absoluteBounds="1.5, 0.875, 2, 1.9631982421875">
-      <DataClassMoniker Name="/bibliotekDataContext/Book" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c46afca6-f0f5-447c-a8cc-32324d5825b6" absoluteBounds="1.5150000000000001, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c3468cc7-91b6-4473-b99d-babf2de9b4e5" absoluteBounds="4, 0.875, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/bibliotekDataContext/Copy" />
-      <nestedChildShapes>
-        <elementListCompartment Id="75414efd-65df-40d3-8066-ce3973ee55ed" absoluteBounds="4.015, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(3.5 : 1.47199625651042); (4 : 1.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/bibliotekDataContext/Book/Book_Copy" />
-      <nodes>
-        <classShapeMoniker Id="becccc3f-a74c-4725-be23-45d780c8d902" />
-        <classShapeMoniker Id="c3468cc7-91b6-4473-b99d-babf2de9b4e5" />
-      </nodes>
-    </associationConnector>
-  </nestedChildShapes>
 </ordesignerObjectsDiagram>

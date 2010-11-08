@@ -27,7 +27,11 @@
         <Button Content="Add a new Book" Height="23" HorizontalAlignment="Left" Margin="145,300,0,0" Name="btnAddBook" VerticalAlignment="Top" Width="104" />
         <Button Content="Change Book" Height="23" HorizontalAlignment="Left" Margin="278,300,0,0" Name="btnChangeBook" VerticalAlignment="Top" Width="96" />
         <Label Content="Copies:" Height="28" HorizontalAlignment="Left" Margin="49,233,0,0" Name="lblCopies" VerticalAlignment="Top" />
-        <ComboBox Height="23" HorizontalAlignment="Left" Margin="114,238,0,0" Name="comboBox1" VerticalAlignment="Top" Width="120" IsEnabled="False" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="114,238,0,0" Name="cbCopies" VerticalAlignment="Top" Width="120" IsEnabled="False" ItemsSource="{Binding}" 
+            DisplayMemberPath="CopyID" 
+            SelectedValuePath="CopyID" 
+            SelectedValue="{Binding Path=CopyID}">
+        </ComboBox>
         <Button Content="Add a new copy" Height="23" HorizontalAlignment="Left" Margin="260,238,0,0" Name="btnAddCopy" VerticalAlignment="Top" Width="114" IsEnabled="False" />
     </Grid>
 </Window>

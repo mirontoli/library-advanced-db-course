@@ -105,6 +105,8 @@ namespace Biblan.Views
         private void lvBooks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Book book = lvBooks.SelectedItem as Book;
+            string isbn = book.ISBN;
+
             MessageBox.Show("you want see " + book.Title + "?");
         }
 
