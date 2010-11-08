@@ -13,7 +13,11 @@ namespace Biblan.Controller
         //bibliotekDataContext dataContext = new bibliotekDataContext();
         BibAnotherChanceDataContext dataContext = new BibAnotherChanceDataContext();
         // private in order to disable instantiating
-
+        public CustomerView CustomerView
+        {
+            get;
+            set;
+        }
         private Controller()
         {
         }
@@ -298,6 +302,7 @@ namespace Biblan.Controller
         internal void ChangeCustomer(int CID, string name, string address, string phone)
         {
             dataContext.usp_update_customer(CID, name, address, phone);
+            this.CustomerView.TestBind();
         }
 
         internal void DeleteCustomer(int CID)

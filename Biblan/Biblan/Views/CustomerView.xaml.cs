@@ -29,7 +29,7 @@ namespace Biblan.Views
             TestBind();
         }
 
-        private void TestBind()
+        public void TestBind()
         {
             lvCustomer.ItemsSource = controller.GetAllCustomers();
         }
@@ -41,6 +41,7 @@ namespace Biblan.Views
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
+            controller.CustomerView = this;
             controller.ShowChangeCustomerWindow();
         }
 
@@ -51,6 +52,7 @@ namespace Biblan.Views
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            controller.CustomerView = this;
             controller.ShowAddCustomerWindow();
         }
     }

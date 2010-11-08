@@ -42,6 +42,7 @@ namespace Biblan.Views
             string phone = txtBoxPhone.Text;
             controller.ChangeCustomer(CID, name, address, phone);
             this.Close();
+            
         }
     }
 }
