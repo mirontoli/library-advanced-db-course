@@ -50,7 +50,9 @@ namespace Biblan.Views
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            controller.ShowDeleteCustomerWindow();
+            controller.CustomerView = this;
+            Model.Customer customer = GetSelectedCustomer();
+            controller.DeleteCustomer(customer.CustomerID);
             btnDelete.IsEnabled = false;
         }
 

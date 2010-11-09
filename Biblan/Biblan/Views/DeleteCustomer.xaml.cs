@@ -37,7 +37,7 @@ namespace Biblan.Views
         {
             string CustID = txtBoxCustomerID.Text;
             int CID = Convert.ToInt32(CustID);
-            controller.DeleteCustomer(CID);
+            //controller.DeleteCustomer(CID);
             this.Close();
         }
     }
