@@ -54,11 +54,18 @@ namespace Biblan.Views
             Model.Customer customer = GetSelectedCustomer();
             controller.DeleteCustomer(customer.CustomerID);
             btnDelete.IsEnabled = false;
-
-            try
+            
+            //Anatoly vad gör vi här med "if" och "else",
+           /* if 
+            else 
+            */
+            
+                try 
             {
-               MessageBox.Show("You have succesfully deleted a customer");
+               // Detta funkar bra! - MessageBox.Show("You have succesfully deleted a customer :)");
             }
+            
+            
             catch (System.Exception excep)
 
             {
