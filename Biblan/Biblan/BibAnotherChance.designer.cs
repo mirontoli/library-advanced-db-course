@@ -183,6 +183,13 @@ namespace Biblan
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name, address, phone);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_update_book")]
+		public int usp_update_book([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(35)")] string isbn, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(75)")] string title, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> numberofpages, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> pyear, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string publisher, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string author)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), isbn, title, numberofpages, pyear, publisher, author);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class get_available_copies_for_a_bookResult

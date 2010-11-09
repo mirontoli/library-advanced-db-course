@@ -19,18 +19,6 @@ namespace Biblan.Model
             set;
         }
 
-        public int NumberOfPages
-        {
-            get;
-            set;
-        }
-
-        public int PrintYear
-        {
-            get;
-            set;
-        }
-
         public string Publisher
         {
             get;
@@ -41,6 +29,20 @@ namespace Biblan.Model
             get;
             set;
         }
+
+        public int NumberOfPages
+        {
+            get;
+            set;
+        }
+
+
+        public int PrintYear
+        {
+            get;
+            set;
+        }
+
         public List<BookCopy> Copies
         {
             get;

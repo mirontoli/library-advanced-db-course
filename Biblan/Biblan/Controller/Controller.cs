@@ -18,6 +18,11 @@ namespace Biblan.Controller
             get;
             set;
         }
+        public BookView BookView
+        {
+            get;
+            set;
+        }
         private Controller()
         {
         }
@@ -245,6 +250,11 @@ namespace Biblan.Controller
         {
             dataContext.usp_update_customer(CID, name, address, phone);
             this.CustomerView.TestBind();
+        }
+
+        internal void ChangeBook(string isbn, string title, int numberofpages, int pyear, string publisher, string author)
+        {
+            dataContext.usp_update_book(isbn, title, numberofpages, pyear, publisher, author);
         }
 
         internal void DeleteCustomer(int CID)

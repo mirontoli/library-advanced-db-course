@@ -30,7 +30,7 @@ namespace Biblan.Views
 
         private void TestBind()
         {
-            lvBooks.ItemsSource = controller.GetAllBooks(); 
+            lvBooks.ItemsSource = controller.GetAllBooks();
         }
         // inspired by:
         // http://msdn.microsoft.com/en-us/library/ms745786.aspx
