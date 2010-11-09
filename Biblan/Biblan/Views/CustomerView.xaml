@@ -8,8 +8,8 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Customer ID" Width="100" DisplayMemberBinding="{Binding Path=CustomerID}"/>
-                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Path=Name}"/>
-                    <GridViewColumn Header="Address" Width="100" DisplayMemberBinding="{Binding Path=Address}"/>
+                    <GridViewColumn Header="Name" Width="132" DisplayMemberBinding="{Binding Path=Name}"/>
+                    <GridViewColumn Header="Address" Width="135" DisplayMemberBinding="{Binding Path=Address}"/>
                     <GridViewColumn Header="Phone" Width="100" DisplayMemberBinding="{Binding Path=Phone}"/>
                 </GridView>
             </ListView.View>
