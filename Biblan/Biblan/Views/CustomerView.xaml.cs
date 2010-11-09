@@ -54,6 +54,16 @@ namespace Biblan.Views
             Model.Customer customer = GetSelectedCustomer();
             controller.DeleteCustomer(customer.CustomerID);
             btnDelete.IsEnabled = false;
+
+            try
+            {
+               MessageBox.Show("You have succesfully deleted a customer");
+            }
+            catch (System.Exception excep)
+
+            {
+                MessageBox.Show(excep.GetType().ToString());
+            }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
