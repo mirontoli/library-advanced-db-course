@@ -283,3 +283,25 @@ AS
 				WHERE CustomerID = @customerID
 			END
 	end
+
+CREATE PROCEDURE usp_update_book
+@isbn VARCHAR (35),
+@title VARCHAR(75),
+@numberofpages INT,
+@pyear INT,
+@publisher VARCHAR(50),
+@author VARCHAR(50)
+
+AS
+	begin
+		IF NOT EXISTS(SELECT ISBN FROM Book WHERE ISBN = @isbn)
+			BEGIN 
+				RAISERROR('The Book you are trying to update does not exist!', 11, 1)
+			END
+		ELSE
+			BEGIN
+				UPDATE Book 
+				SET Title = @title, Author = @author, Publisher = @publisher, NumberOfPages = @numberofpages, PrintYear = @pyear
+				WHERE ISBN = @isbn
+			END
+	end
