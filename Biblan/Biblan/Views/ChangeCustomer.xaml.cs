@@ -57,5 +57,10 @@ namespace Biblan.Views
             this.Close();
             
         }
+
+        private void txtBoxCustomerID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

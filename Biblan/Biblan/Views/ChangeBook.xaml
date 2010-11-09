@@ -11,8 +11,8 @@
         <TextBox Height="23" HorizontalAlignment="Left" Margin="124,44,0,0" Name="txtBoxTitle" VerticalAlignment="Top" Width="328" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="124,73,0,0" Name="txtBoxPublisher" VerticalAlignment="Top" Width="328" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="124,102,0,0" Name="txtBoxAuthor" VerticalAlignment="Top" Width="328" />
-        <Button Content="Change" Height="23" HorizontalAlignment="Left" Margin="267,325,0,0" Name="btnChange" VerticalAlignment="Top" Width="75" />
-        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="370,325,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+        <Button Content="Change" Height="23" HorizontalAlignment="Left" Margin="267,325,0,0" Name="btnChange" VerticalAlignment="Top" Width="75" Click="btnChange_Click" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,325,19,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="button2_Click" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="124,131,0,0" Name="txtBoxNrOfPages" VerticalAlignment="Top" Width="321" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="19,134,0,0" Name="textBlock1" Text="Nr of pages" VerticalAlignment="Top" Width="99" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="124,160,0,0" Name="txtBoxYearPrinted" VerticalAlignment="Top" Width="328" />

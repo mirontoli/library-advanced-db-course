@@ -44,6 +44,16 @@ namespace Biblan.Views
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
             string ISBN = txtBoxBookISBN.Text;
             string title = txtBoxTitle.Text;
             string publisher = txtBoxPublisher.Text;
@@ -53,12 +63,7 @@ namespace Biblan.Views
             string printyear = txtBoxYearPrinted.Text;
             int pyear = Convert.ToInt32(printyear);
             controller.ChangeBook(ISBN, title, nrpages, pyear, publisher, author);
-                this.Close();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

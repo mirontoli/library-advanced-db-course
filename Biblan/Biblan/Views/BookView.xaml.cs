@@ -31,6 +31,7 @@ namespace Biblan.Views
         private void TestBind()
         {
             lvBooks.ItemsSource = controller.GetAllBooks();
+            lvBooks.Items.Refresh();
         }
         // inspired by:
         // http://msdn.microsoft.com/en-us/library/ms745786.aspx
@@ -116,6 +117,7 @@ namespace Biblan.Views
                 btnAddCopy.IsEnabled = true;
                 cbCopies.ItemsSource = null;
                 cbCopies.ItemsSource = controller.GetAvailableCopies(book);
+                btnChangeBook.IsEnabled = true;
             }
         }
 
@@ -142,7 +144,8 @@ namespace Biblan.Views
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-              controller.ShowAddBookWindow();
+            controller.BookView = this;
+            controller.ShowAddBookWindow();
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
@@ -168,7 +171,10 @@ namespace Biblan.Views
 
         private void btnChangeBook_Click(object sender, RoutedEventArgs e)
         {
-            controller.ShowChangeBookWindow();
+            controller.BookView = this;
+            Model.Book book = GetSelectedBook();
+            controller.ShowChangeBookWindow(book);
+            btnChangeBook.IsEnabled = false;
         }
 
     }

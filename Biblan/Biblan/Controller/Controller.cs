@@ -262,9 +262,10 @@ namespace Biblan.Controller
             dataContext.usp_delete_customer(CID);
         }
 
-        public void ShowChangeBookWindow()
+        public void ShowChangeBookWindow(Book book)
         {
             ChangeBook cb = new ChangeBook();
+            cb.BookToChange = book;
             cb.Show();
         }
 
@@ -282,6 +283,7 @@ namespace Biblan.Controller
             List<Customer> customers = query.ToList();
             return customers;
         }
+ 
 
         internal void AddBook(string ISBN, string title, int pages, int year, string publisher, string author)
         {
