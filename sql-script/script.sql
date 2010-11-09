@@ -263,3 +263,23 @@ AS RETURN (
 	SELECT ISBN, CustomerID, CopyID
 	FROM Borrow
 )
+
+-- Anatoly 20101109
+CREATE PROCEDURE usp_update_customer
+@customerID INT,
+@name VARCHAR(50),
+@address VARCHAR(75),
+@phone VARCHAR(50)
+AS
+	begin
+		IF NOT EXISTS(SELECT CustomerID FROM Customer WHERE CustomerID = @customerID)
+			BEGIN 
+				RAISERROR('The customer you are trying to update does not exist!', 11, 1)
+			END
+		ELSE
+			BEGIN
+				UPDATE Customer 
+				SET Name = @name, Address = @address, Phone = @phone
+				WHERE CustomerID = @customerID
+			END
+	end
