@@ -79,6 +79,9 @@
     <Compile Include="Views\BorrowingView.xaml.cs">
       <DependentUpon>BorrowingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ChangeBook.xaml.cs">
+      <DependentUpon>ChangeBook.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ChangeCustomer.xaml.cs">
       <DependentUpon>ChangeCustomer.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BorrowingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChangeBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -166,5 +166,10 @@ namespace Biblan.Views
             controller.ShowBorrowFromBookView(bc);
         }
 
+        private void btnChangeBook_Click(object sender, RoutedEventArgs e)
+        {
+            controller.ShowChangeBookWindow();
+        }
+
     }
 }

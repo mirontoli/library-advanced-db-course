@@ -252,6 +252,12 @@ namespace Biblan.Controller
             dataContext.usp_delete_customer(CID);
         }
 
+        public void ShowChangeBookWindow()
+        {
+            ChangeBook cb = new ChangeBook();
+            cb.Show();
+        }
+
         public List<Customer> GetAllCustomers()
         {
             var query = from c in dataContext.get_all_customers()
@@ -267,9 +273,9 @@ namespace Biblan.Controller
             return customers;
         }
 
-        internal void AddBook(string ISBN, string title, int pages, int year, string author, string publisher)
+        internal void AddBook(string ISBN, string title, int pages, int year, string publisher, string author)
         {
-            dataContext.usp_add_book(ISBN, title, pages, year, author, publisher);
+            dataContext.usp_add_book(ISBN, title, pages, year, publisher, author);
         }
 
         public void ReturnBook(Borrowing bor)

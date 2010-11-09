@@ -10,7 +10,7 @@
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,103,0,0" Name="txtPublisher" Text="Publisher" VerticalAlignment="Top" Width="78" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="96,100,0,0" Name="tbPublisher" VerticalAlignment="Top" Width="366" />
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,148,0,0" Name="txtAuthor" Text="Author" VerticalAlignment="Top" Width="78" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="96,145,0,0" Name="tbAuthor" VerticalAlignment="Top" Width="366" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="96,145,0,0" Name="tbAuthor" VerticalAlignment="Top" Width="366" TextChanged="tbAuthor_TextChanged" />
         <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="290,266,0,0" Name="btnAdd" VerticalAlignment="Top" Width="75" Click="btnAdd_Click" />
         <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,266,12,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
         <Label Content="No. of pages" Height="28" HorizontalAlignment="Left" Margin="12,185,0,0" Name="lblPages" VerticalAlignment="Top" Width="78" />
