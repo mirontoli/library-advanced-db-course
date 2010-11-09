@@ -53,5 +53,10 @@ namespace Biblan.Views
             Model.Customer customer = lvCustomer.SelectedItem as Model.Customer;
             return customer;
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
