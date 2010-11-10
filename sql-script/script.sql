@@ -298,10 +298,11 @@ CREATE TRIGGER SaveBorrowHistory
 ON Borrow
 AFTER DELETE
 AS
-INSERT INTO Borrow_History (ISBN, CustomerID, CopyID, BDate)
-SELECT *
-FROM deleted
-
+BEGIN
+	INSERT INTO Borrow_History (ISBN, CustomerID, CopyID, BDate)
+	SELECT *
+	FROM deleted
+END
 
 
 -- inserts Anatoly 20101026
