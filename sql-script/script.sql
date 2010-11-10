@@ -53,7 +53,144 @@ CREATE TABLE Borrow_History (
     CONSTRAINT Borrow__History_Customer_FK FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
     );
 
+	-- PROCEDURES
+-- Create procedures Anatoly 20101026
+CREATE PROCEDURE usp_add_book
+@isbn VARCHAR(35),
+@title VARCHAR(75),
+@number_of_pages INT,
+@print_year INT,
+@publisher VARCHAR(50),
+@author VARCHAR(50)
+AS
+	begin
+		IF NOT EXISTS(SELECT isbn FROM Book where isbn = @isbn)
+			BEGIN 
+				INSERT INTO Book values(@isbn, @title, @number_of_pages, @print_year, @publisher, @author)
+			END
+		ELSE 
+			BEGIN
+				RAISERROR('There is already such a book', 11, 1)
+			END
+	end
 
+-- Pontus 20101104. Updated by Anatoly (if)
+CREATE PROCEDURE usp_add_copy
+@isbn VARCHAR(35)
+AS
+	BEGIN
+		IF NOT EXISTS (SELECT isbn FROM Book WHERE isbn = @isbn)
+			BEGIN
+				RAISERROR('There is no such book', 11, 1);
+			END
+		ELSE 
+			BEGIN
+				declare @copyid INT
+				SELECT @copyid = MAX(CopyID) + 1
+				FROM Copy
+				WHERE ISBN = @isbn
+				IF @copyid IS NULL
+					BEGIN
+						SET @copyid = 1
+					END
+				INSERT INTO Copy values(@isbn, @copyid)
+			END
+	END
+
+	-- Create Procedures Dino 20101104
+CREATE PROCEDURE usp_borrow_book
+@isbn VARCHAR(35),
+@customerID INT,
+@copyID INT
+AS
+	begin
+		INSERT INTO Borrow(ISBN, CustomerID, CopyID) values(@isbn, @customerID, @copyID)
+	end
+
+CREATE PROCEDURE usp_return_book
+@isbn VARCHAR(35),
+@customerID INT,
+@copyID INT
+AS
+	begin
+		DELETE FROM Borrow
+		WHERE ISBN = @isbn
+		AND CustomerID = @customerID
+		AND CopyID = @copyID
+	end	
+	-- Anatoly 20101108
+CREATE PROCEDURE usp_add_customer
+@name VARCHAR(50),
+@address VARCHAR(75),
+@phone VARCHAR(50)
+AS
+	begin
+		DECLARE @CustomerID INT
+		SELECT @CustomerID = MAX(CustomerID) + 1
+		FROM Customer
+		IF @CustomerID IS NULL
+			BEGIN
+				SET @CustomerID = 1
+			END
+		INSERT INTO Customer VALUES(@customerID, @name, @address, @phone)
+	end
+-- create procedure Dino 20101108
+CREATE PROCEDURE usp_delete_customer
+@customerID INT
+AS
+	begin
+		IF NOT EXISTS(SELECT CustomerID FROM Customer WHERE CustomerID = @customerID)
+			BEGIN 
+				RAISERROR('The customer you are trying to delete does not exist!', 11, 1)
+			END
+		ELSE
+			BEGIN
+				DELETE FROM Customer WHERE CustomerID = @customerID
+			END
+	end
+)
+-- Anatoly 20101109
+CREATE PROCEDURE usp_update_customer
+@customerID INT,
+@name VARCHAR(50),
+@address VARCHAR(75),
+@phone VARCHAR(50)
+AS
+	begin
+		IF NOT EXISTS(SELECT CustomerID FROM Customer WHERE CustomerID = @customerID)
+			BEGIN 
+				RAISERROR('The customer you are trying to update does not exist!', 11, 1)
+			END
+		ELSE
+			BEGIN
+				UPDATE Customer 
+				SET Name = @name, Address = @address, Phone = @phone
+				WHERE CustomerID = @customerID
+			END
+	end
+
+CREATE PROCEDURE usp_update_book
+@isbn VARCHAR (35),
+@title VARCHAR(75),
+@numberofpages INT,
+@pyear INT,
+@publisher VARCHAR(50),
+@author VARCHAR(50)
+
+AS
+	begin
+		IF NOT EXISTS(SELECT ISBN FROM Book WHERE ISBN = @isbn)
+			BEGIN 
+				RAISERROR('The Book you are trying to update does not exist!', 11, 1)
+			END
+		ELSE
+			BEGIN
+				UPDATE Book 
+				SET Title = @title, Author = @author, Publisher = @publisher, NumberOfPages = @numberofpages, PrintYear = @pyear
+				WHERE ISBN = @isbn
+			END
+	end
+	-- FUNCTIONS
 -- Create functions Anatoly 20101026
 CREATE FUNCTION search_books_titles(@title VARCHAR(75))
 RETURNS TABLE
@@ -120,87 +257,6 @@ AS RETURN (
 )
 
 
--- Create procedures Anatoly 20101026
-CREATE PROCEDURE usp_add_book
-@isbn VARCHAR(35),
-@title VARCHAR(75),
-@number_of_pages INT,
-@print_year INT,
-@publisher VARCHAR(50),
-@author VARCHAR(50)
-AS
-	begin
-		IF NOT EXISTS(SELECT isbn FROM Book where isbn = @isbn)
-			BEGIN 
-				INSERT INTO Book values(@isbn, @title, @number_of_pages, @print_year, @publisher, @author)
-			END
-		ELSE 
-			BEGIN
-				RAISERROR('There is already such a book', 11, 1)
-			END
-	end
-
--- Pontus 20101104. Updated by Anatoly (if)
-CREATE PROCEDURE usp_add_copy
-@isbn VARCHAR(35)
-AS
-	BEGIN
-		IF NOT EXISTS (SELECT isbn FROM Book WHERE isbn = @isbn)
-			BEGIN
-				RAISERROR('There is no such book', 11, 1);
-			END
-		ELSE 
-			BEGIN
-				declare @copyid INT
-				SELECT @copyid = MAX(CopyID) + 1
-				FROM Copy
-				WHERE ISBN = @isbn
-				IF @copyid IS NULL
-					BEGIN
-						SET @copyid = 1
-					END
-				INSERT INTO Copy values(@isbn, @copyid)
-			END
-	END
-
-
--- inserts Anatoly 20101026
--- revision Pontus 20101104
-insert into Book values('9789121100523', 'Latinsk grammatik', 247, 1989, 'Almqvist & Wiksell läromedel', 'Erik Tidner');
-exec usp_add_book '9781412929554', 'Global Shift: Mapping the Changing Contours of the World Economy', 599, 2007, 'Sage', 'Peter Dicken'
-exec usp_add_book '0316769533', 'The Catcher in the Rye', 276, 1951, 'Little, Brown and Company', 'J. D. Salinger'
-
--- CREATE TRIGGER Dino 20101104
-CREATE TRIGGER SaveBorrowHistory
-ON Borrow
-AFTER DELETE
-AS
-INSERT INTO Borrow_History (ISBN, CustomerID, CopyID, BDate)
-SELECT *
-FROM deleted
-
--- Create Procedures Dino 20101104
-CREATE PROCEDURE usp_borrow_book
-@isbn VARCHAR(35),
-@customerID INT,
-@copyID INT
-AS
-	begin
-		INSERT INTO Borrow(ISBN, CustomerID, CopyID) values(@isbn, @customerID, @copyID)
-	end
-
-CREATE PROCEDURE usp_return_book
-@isbn VARCHAR(35),
-@customerID INT,
-@copyID INT
-AS
-	begin
-		DELETE FROM Borrow
-		WHERE ISBN = @isbn
-		AND CustomerID = @customerID
-		AND CopyID = @copyID
-	end	
-
 -- Create Function Dino 20101105
 CREATE FUNCTION get_last_book_borrowed()
 RETURNS TABLE
@@ -225,37 +281,7 @@ AS RETURN (
 	SELECT *
 	FROM Customer
 )
--- Anatoly 20101108
-CREATE PROCEDURE usp_add_customer
-@name VARCHAR(50),
-@address VARCHAR(75),
-@phone VARCHAR(50)
-AS
-	begin
-		DECLARE @CustomerID INT
-		SELECT @CustomerID = MAX(CustomerID) + 1
-		FROM Customer
-		IF @CustomerID IS NULL
-			BEGIN
-				SET @CustomerID = 1
-			END
-		INSERT INTO Customer VALUES(@customerID, @name, @address, @phone)
-	end
--- create procedure Dino 20101108
-CREATE PROCEDURE usp_delete_customer
-@customerID INT
-AS
-	begin
-		IF NOT EXISTS(SELECT CustomerID FROM Customer WHERE CustomerID = @customerID)
-			BEGIN 
-				RAISERROR('The customer you are trying to delete does not exist!', 11, 1)
-			END
-		ELSE
-			BEGIN
-				DELETE FROM Customer WHERE CustomerID = @customerID
-			END
-	end
-)
+
 
 CREATE FUNCTION get_all_borrows()
 RETURNS TABLE
@@ -265,44 +291,23 @@ AS RETURN (
 	WHERE b.CustomerID = c.CustomerID
 )
 
--- Anatoly 20101109
-CREATE PROCEDURE usp_update_customer
-@customerID INT,
-@name VARCHAR(50),
-@address VARCHAR(75),
-@phone VARCHAR(50)
-AS
-	begin
-		IF NOT EXISTS(SELECT CustomerID FROM Customer WHERE CustomerID = @customerID)
-			BEGIN 
-				RAISERROR('The customer you are trying to update does not exist!', 11, 1)
-			END
-		ELSE
-			BEGIN
-				UPDATE Customer 
-				SET Name = @name, Address = @address, Phone = @phone
-				WHERE CustomerID = @customerID
-			END
-	end
 
-CREATE PROCEDURE usp_update_book
-@isbn VARCHAR (35),
-@title VARCHAR(75),
-@numberofpages INT,
-@pyear INT,
-@publisher VARCHAR(50),
-@author VARCHAR(50)
-
+-- TRIGGERS
+-- CREATE TRIGGER Dino 20101104
+CREATE TRIGGER SaveBorrowHistory
+ON Borrow
+AFTER DELETE
 AS
-	begin
-		IF NOT EXISTS(SELECT ISBN FROM Book WHERE ISBN = @isbn)
-			BEGIN 
-				RAISERROR('The Book you are trying to update does not exist!', 11, 1)
-			END
-		ELSE
-			BEGIN
-				UPDATE Book 
-				SET Title = @title, Author = @author, Publisher = @publisher, NumberOfPages = @numberofpages, PrintYear = @pyear
-				WHERE ISBN = @isbn
-			END
-	end
+INSERT INTO Borrow_History (ISBN, CustomerID, CopyID, BDate)
+SELECT *
+FROM deleted
+
+
+
+-- inserts Anatoly 20101026
+-- revision Pontus 20101104
+insert into Book values('9789121100523', 'Latinsk grammatik', 247, 1989, 'Almqvist & Wiksell läromedel', 'Erik Tidner');
+exec usp_add_book '9781412929554', 'Global Shift: Mapping the Changing Contours of the World Economy', 599, 2007, 'Sage', 'Peter Dicken'
+exec usp_add_book '0316769533', 'The Catcher in the Rye', 276, 1951, 'Little, Brown and Company', 'J. D. Salinger'
+
+
