@@ -21,6 +21,10 @@ namespace Biblan.Views
         GridViewColumnHeader _lastHeaderClicked = null;
         ListSortDirection _lastDirection = ListSortDirection.Ascending;
 
+        //inspired by http://stackoverflow.com/questions/1361350/keyboard-shortcuts-in-wpf
+        public static RoutedCommand MyCommand = new RoutedCommand(); 
+
+
         private Controller.Controller controller = Controller.Controller.GetInstance();
         public BookView()
         {
