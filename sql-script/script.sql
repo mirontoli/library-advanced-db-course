@@ -260,8 +260,9 @@ AS
 CREATE FUNCTION get_all_borrows()
 RETURNS TABLE
 AS RETURN (
-	SELECT ISBN, CustomerID, CopyID
-	FROM Borrow
+	SELECT b.ISBN, c.CustomerID, c.Name, b.CopyID
+	FROM Borrow b, Customer c
+	WHERE b.CustomerID = c.CustomerID
 )
 
 -- Anatoly 20101109
