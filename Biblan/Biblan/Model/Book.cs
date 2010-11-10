@@ -37,7 +37,7 @@ namespace Biblan.Model
         }
 
 
-        public int PrintYear
+        public int? PrintYear
         {
             get;
             set;

@@ -74,7 +74,8 @@ namespace Biblan.Controller
                             NumberOfPages = (int)c.NumberOfPages,
                             Publisher = c.Publisher,
                             ISBN = c.ISBN,
-                            Author = c.Author
+                            Author = c.Author,
+                            PrintYear = c.PrintYear
                         };
             List<Book> books = null;
             try
