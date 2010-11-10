@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Biblan.Views.BookView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Books" ResizeMode="NoResize" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="399" Width="459">
+        Title="Books" ResizeMode="NoResize" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="399" Width="502" KeyUp="Window_KeyUp">
     <Grid Height="354">
 
         <ListView Height="201" 
@@ -9,11 +9,11 @@
                   Margin="12,26,0,0" 
                   Name="lvBooks" 
                   VerticalAlignment="Top"
-                  Width="413" 
+                  Width="456" 
                   ItemsSource="{Binding}" 
                   IsEnabled="True" 
                   DataContext="{Binding}"
-                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" Grid.ColumnSpan="8" SelectionChanged="lvBooks_SelectionChanged" SelectionMode="Single">
+                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler" SelectionChanged="lvBooks_SelectionChanged" SelectionMode="Single">
              <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ISBN" Width="100" DisplayMemberBinding="{Binding Path=ISBN}"/>
@@ -23,7 +23,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="297,0,0,0" Name="tbFilter" VerticalAlignment="Top" Width="120" Text="Filter" KeyUp="tbFilter_KeyUp" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="342,0,0,0" Name="tbFilter" VerticalAlignment="Top" Width="120" Text="Search" KeyUp="tbFilter_KeyUp" GotFocus="tbFilter_GotFocus" />
         <Button Content="Add a new book" Height="23" HorizontalAlignment="Left" Margin="28,309,0,0" Name="btnAddBook" VerticalAlignment="Top" Width="104" Click="btnAddBook_Click" />
         <Button Content="Change book" Height="23" HorizontalAlignment="Left" Margin="153,309,0,0" Name="btnChangeBook" VerticalAlignment="Top" Width="96" Click="btnChangeBook_Click" />
         <Label Content="Available Copies:" Height="28" HorizontalAlignment="Left" Margin="12,237,0,0" Name="lblCopies" VerticalAlignment="Top" />

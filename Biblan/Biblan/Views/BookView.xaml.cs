@@ -177,5 +177,17 @@ namespace Biblan.Views
             btnChangeBook.IsEnabled = false;
         }
 
+        private void tbFilter_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (tbFilter.Text.Equals("Search")) 
+            {
+                tbFilter.Text = "";
+            }
+        }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+        }
+
     }
 }

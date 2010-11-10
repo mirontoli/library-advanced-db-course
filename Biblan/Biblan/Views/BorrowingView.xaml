@@ -8,7 +8,7 @@
             <ListView.View>
             <GridView>
                 <GridViewColumn Header="ISBN" Width="200" DisplayMemberBinding="{Binding Path=BookCopy.Book.ISBN}"/>
-                    <GridViewColumn Header="Copy ID" Width="151" DisplayMemberBinding="{Binding Path=BookCopy.CopyID}"/>
+                    <GridViewColumn Header="Copy ID" Width="100" DisplayMemberBinding="{Binding Path=BookCopy.CopyID}"/>
                     <GridViewColumn Header="Customer" Width="152" DisplayMemberBinding="{Binding Path=Customer.Name}"/>
 
                 </GridView>
