@@ -157,12 +157,6 @@ namespace Biblan
 			return this.CreateMethodCallQuery<get_all_customersResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.get_all_borrows", IsComposable=true)]
-		public IQueryable<get_all_borrowsResult> get_all_borrows()
-		{
-			return this.CreateMethodCallQuery<get_all_borrowsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.usp_return_book")]
 		public int usp_return_book([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(35)")] string isbn, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> customerID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> copyID)
 		{
@@ -189,6 +183,12 @@ namespace Biblan
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), isbn, title, numberofpages, pyear, publisher, author);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.get_all_borrows", IsComposable=true)]
+		public IQueryable<get_all_borrowsResult> get_all_borrows()
+		{
+			return this.CreateMethodCallQuery<get_all_borrowsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
 	}
 	
@@ -1089,6 +1089,8 @@ namespace Biblan
 		
 		private int _CustomerID;
 		
+		private string _Name;
+		
 		private int _CopyID;
 		
 		public get_all_borrowsResult()
@@ -1123,6 +1125,22 @@ namespace Biblan
 				if ((this._CustomerID != value))
 				{
 					this._CustomerID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
 				}
 			}
 		}

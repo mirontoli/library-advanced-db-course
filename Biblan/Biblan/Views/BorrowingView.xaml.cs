@@ -23,11 +23,6 @@ namespace Biblan.Views
         public BorrowingView()
         {
             InitializeComponent();
-            TestBorrowings();
-        }
-
-        private void TestBorrowings()
-        {
             lvBorrowing.ItemsSource = controller.GetAllBorrowings();
         }
 

@@ -41,7 +41,8 @@ namespace Biblan.Controller
                         {
                             ISBN = c.ISBN,
                             CopyID = c.CopyID,
-                            CustomerID = c.CustomerID
+                            CustomerID = c.CustomerID,
+                            Name = c.Name
                         };
             List<Borrowing> borrowings = new List<Borrowing>();
             foreach (var item in query)
@@ -55,6 +56,7 @@ namespace Biblan.Controller
 
                 Customer cust = new Customer();
                 cust.CustomerID = item.CustomerID;
+                cust.Name = item.Name;
 
                 Borrowing b = new Borrowing();
                 b.BookCopy = bc;
@@ -300,14 +302,22 @@ namespace Biblan.Controller
         }
  
 
-        internal void AddBook(string ISBN, string title, int pages, int year, string publisher, string author)
+        public void AddBook(string ISBN, string title, int pages, int year, string publisher, string author)
         {
             dataContext.usp_add_book(ISBN, title, pages, year, publisher, author);
         }
 
         public void ReturnBook(Borrowing bor)
         {
-            dataContext.usp_return_book(bor.BookCopy.Book.ISBN, bor.Customer.CustomerID, bor.BookCopy.CopyID);
+            try
+            {
+                dataContext.usp_return_book(bor.BookCopy.Book.ISBN, bor.Customer.CustomerID, bor.BookCopy.CopyID);
+            }
+            catch (Exception ex)
+            {
+
+                ShowErrorMessage(ex.Message);
+            }
         }
 
         public void ShowBookView()

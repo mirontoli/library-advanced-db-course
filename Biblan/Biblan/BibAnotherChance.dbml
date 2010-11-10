@@ -116,13 +116,6 @@
       <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.get_all_borrows" Method="get_all_borrows" IsComposable="true">
-    <ElementType Name="get_all_borrowsResult">
-      <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
-      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CopyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.usp_return_book" Method="usp_return_book">
     <Parameter Name="isbn" Type="System.String" DbType="VarChar(35)" />
     <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
@@ -149,5 +142,13 @@
     <Parameter Name="publisher" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="author" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.get_all_borrows" Method="get_all_borrows" IsComposable="true">
+    <ElementType Name="get_all_borrowsResult">
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CopyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>
