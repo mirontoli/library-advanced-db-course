@@ -257,9 +257,23 @@ namespace Biblan.Controller
             dataContext.usp_update_book(isbn, title, numberofpages, pyear, publisher, author);
         }
 
-        internal void DeleteCustomer(int CID)
+        public void DeleteCustomer(Model.Customer customer)
         {
-            dataContext.usp_delete_customer(CID);
+            try
+            {
+                dataContext.usp_delete_customer(customer.CustomerID);
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage(ex.Message);
+            }
+        }
+
+        private void ShowErrorMessage(string errorMsg)
+        {
+            ErrorView ev = new ErrorView();
+            ev.ErrorMessage = errorMsg;
+            ev.Show();
         }
 
         public void ShowChangeBookWindow(Book book)

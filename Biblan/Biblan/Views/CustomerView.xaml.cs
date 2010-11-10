@@ -52,25 +52,8 @@ namespace Biblan.Views
         {
             controller.CustomerView = this;
             Model.Customer customer = GetSelectedCustomer();
-            controller.DeleteCustomer(customer.CustomerID);
+            controller.DeleteCustomer(customer);
             btnDelete.IsEnabled = false;
-            
-            //Anatoly vad gör vi här med "if" och "else",
-           /* if 
-            else 
-            */
-            
-                try 
-            {
-               // Detta funkar bra! - MessageBox.Show("You have succesfully deleted a customer :)");
-            }
-            
-            
-            catch (System.Exception excep)
-
-            {
-                MessageBox.Show(excep.GetType().ToString());
-            }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
